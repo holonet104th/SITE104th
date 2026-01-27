@@ -246,8 +246,8 @@
                 <div class="flex items-center space-x-3 cursor-pointer group" onclick="navTo('home')">
                     <img src="./img/logo2.png" class="h-10 w-10 object-contain group-hover:drop-shadow-[0_0_15px_rgba(124,144,177,0.8)] transition">
                     <div class="hidden md:block leading-none">
-                        <div class="text-white font-bold text-lg tracking-wider tech-font">WOLFPACK</div>
-                        <div class="text-[10px] text-gray-500 font-mono tracking-widest">104TH BATTALION</div>
+                        <div class="text-white font-bold text-lg tracking-wider tech-font">104TH BATTALION</div>
+                        <div class="text-[10px] text-gray-500 font-mono tracking-widest">HOLONET</div>
                     </div>
                 </div>
 
@@ -411,8 +411,8 @@
                 <a href="https://docs.google.com/spreadsheets/d/1Gf97xmsTdAPI-HMrB3UaRW0yd8ECqCHE4TQTtDx_Soo/edit" target="_blank" class="external-link-btn">
                     <i data-lucide="external-link" class="mr-2"></i> OUVRIR LE DOCUMENT EXTERNE (Google Sheets)
                 </a>
-                <div class="iframe-wrapper">
-                    <iframe src="https://docs.google.com/spreadsheets/d/1Gf97xmsTdAPI-HMrB3UaRW0yd8ECqCHE4TQTtDx_Soo/edit?gid=21598558#gid=21598558" loading="lazy"></iframe>
+                <div class="iframe-wrapper" style="height: 1000px;">
+                    <iframe src="https://docs.google.com/spreadsheets/d/1Gf97xmsTdAPI-HMrB3UaRW0yd8ECqCHE4TQTtDx_Soo/edit?gid=21598558#gid=21598558" loading="lazy" style="width: 100%; height: 100%; border: none;"></iframe>
                 </div>
             </section>
 
@@ -428,8 +428,8 @@
                 <a href="https://drive.google.com/open?authuser=0&id=16nsbt7hmElbG4N16cA1uHAzQYIsJn_rpSDLuofaEOd0" target="_blank" class="external-link-btn">
                     <i data-lucide="external-link" class="mr-2"></i> OUVRIR LE DOCUMENT EXTERNE (Google Sheets)
                 </a>
-                <div class="iframe-wrapper">
-                    <iframe src="https://docs.google.com/spreadsheets/d/16nsbt7hmElbG4N16cA1uHAzQYIsJn_rpSDLuofaEOd0/edit" loading="lazy"></iframe>
+                <div class="iframe-wrapper" style="height: 1000px;">
+                    <iframe src="https://docs.google.com/spreadsheets/d/16nsbt7hmElbG4N16cA1uHAzQYIsJn_rpSDLuofaEOd0/edit" loading="lazy" style="width: 100%; height: 100%; border: none;"></iframe>
                 </div>
             </section>
 
@@ -453,109 +453,809 @@
                     <i data-lucide="external-link" class="mr-2"></i> OUVRIR LE FORMULAIRE EXTERNE
                 </a>
                 <div class="iframe-wrapper" style="height: 1000px;">
-                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScaBR4CmNTtmJ0BKRbGFqV5Fy4dHGwXvAsxvO0wNdUuNiLDGg/viewform?embedded=true" loading="lazy"></iframe>
+                    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScaBR4CmNTtmJ0BKRbGFqV5Fy4dHGwXvAsxvO0wNdUuNiLDGg/viewform?embedded=true" loading="lazy" style="width: 100%; height: 100%; border: none;"></iframe>
                 </div>
             </section>
 
             <!-- 8. RÈGLEMENT -->
-            <section id="reglement" class="page-section hidden">
-                <div class="flex flex-col lg:flex-row gap-8">
-                    <div class="lg:w-1/4">
-                        <div class="holo-panel p-4 sticky top-24 rounded border-l-2 border-blue-500">
-                            <h3 class="text-blue-400 font-bold mb-4 tech-font">SOMMAIRE</h3>
-                            <ul class="space-y-2 text-xs font-mono text-gray-400">
-                                <li><a href="#r1" class="hover:text-white transition">> 1. Communication</a></li>
-                                <li><a href="#r2" class="hover:text-white transition">> 2. Rapports</a></li>
-                                <li><a href="#r3" class="hover:text-white transition">> 3. Promotions</a></li>
-                                <li><a href="#r4" class="hover:text-white transition">> 4. Discipline</a></li>
-                                <li><a href="#r5" class="hover:text-white transition">> 5. Armurerie</a></li>
-                                <li><a href="#r6" class="hover:text-white transition">> 6. Vie Quotidienne</a></li>
-                                <li><a href="#r8" class="hover:text-white transition">> 8. Missions</a></li>
-                                <li><a href="#r12" class="hover:text-white transition">> 12. Commandement</a></li>
-                            </ul>
-                        </div>
+
+            <section id="reglement" class="page-section">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- SOMMAIRE (Sticky Sidebar) -->
+            <div class="lg:w-1/4">
+                <div class="holo-panel p-4 sticky top-24 rounded border-l-2 border-blue-500 bg-gray-900/50 backdrop-blur-sm">
+                    <h3 class="text-blue-400 font-bold mb-4 tech-font tracking-wider">SOMMAIRE</h3>
+                    <ul class="space-y-2 text-xs font-mono text-gray-400">
+                        <li><a href="#r1" class="hover:text-blue-300 transition flex items-center gap-2"><span>></span> 1. Salons Textuels</a></li>
+                        <li><a href="#r2" class="hover:text-blue-300 transition flex items-center gap-2"><span>></span> 2. Rapports</a></li>
+                        <li><a href="#r3" class="hover:text-blue-300 transition flex items-center gap-2"><span>></span> 3. Promotions (P1)</a></li>
+                        <li><a href="#r4" class="hover:text-blue-300 transition flex items-center gap-2"><span>></span> 4. Promotions (P2) & Discipline</a></li>
+                        <li><a href="#r5" class="hover:text-blue-300 transition flex items-center gap-2"><span>></span> 5. L'Armurerie</a></li>
+                        <li><a href="#r6" class="hover:text-blue-300 transition flex items-center gap-2"><span>></span> 6. Les Quartiers</a></li>
+                        <li><a href="#r7" class="hover:text-blue-300 transition flex items-center gap-2"><span>></span> 7. Stockage & Maintenance</a></li>
+                        <li><a href="#r8" class="hover:text-blue-300 transition flex items-center gap-2"><span>></span> 8. Durant les Missions</a></li>
+                        <li><a href="#r9" class="hover:text-blue-300 transition flex items-center gap-2"><span>></span> 9. Départ & Retour</a></li>
+                        <li><a href="#r10" class="hover:text-blue-300 transition flex items-center gap-2"><span>></span> 10. Entraînement</a></li>
+                        <li><a href="#r11" class="hover:text-blue-300 transition flex items-center gap-2"><span>></span> 11. Jedi Régimentaire</a></li>
+                        <li><a href="#r12" class="hover:text-blue-300 transition flex items-center gap-2"><span>></span> 12. ARC ALPHA</a></li>
+                        <li><a href="#r13" class="hover:text-blue-300 transition flex items-center gap-2"><span>></span> 13. ARC TROOPER</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- CONTENU PRINCIPAL -->
+            <div class="lg:w-3/4 holo-panel p-8 rounded rp-doc bg-gray-900/30 text-gray-300 leading-relaxed">
+                <!-- Header du Document -->
+                <div class="text-center mb-12 border-b border-gray-700 pb-6">
+                    <h2 class="text-4xl text-white tech-font mb-2">RÈGLEMENT INTERNE</h2>
+                    <div class="flex justify-center items-center gap-4 text-[10px] uppercase tracking-widest text-blue-500 font-mono">
+                        <span>Unité : 104th Battalion</span>
+                        <span class="text-gray-600">|</span>
+                        <span>Statut : Opérationnel</span>
                     </div>
-                    <div class="lg:w-3/4 holo-panel p-8 rounded rp-doc">
-                        <div class="text-center mb-8 border-b border-gray-700 pb-4">
-                            <h2 class="text-3xl text-white tech-font">RÈGLEMENT INTERNE</h2>
-                            <p class="text-xs text-gray-500 mt-2">Dernière mise à jour par le Commandement 104th</p>
-                        </div>
-                        <div id="r1">
-                            <h3>Article 1 : Protocoles de Communication</h3>
-                            <p><strong>1.1 - Langage et Tenue :</strong> Il est impératif de maintenir un langage correct en toutes circonstances.</p>
-                        </div>
-                        <div id="r2">
-                            <h3>Article 2 : Procédures de Rapport</h3>
-                            <p><strong>2.1 - Format :</strong> Tout rapport officiel doit comporter au minimum trois lignes complètes de texte explicatif.</p>
-                        </div>
-                         <div id="r4">
-                            <h3>Article 4 : Discipline et Sanctions</h3>
-                            <div class="highlight">
-                                <strong>ÉCHELLE DES SANCTIONS</strong><br>
-                                - 1er niveau : Blâme simple (Avertissement oral).<br>
-                                - 2ème niveau : Double blâme entraînant une rétrogradation immédiate.<br>
-                                - 3ème niveau : Triple blâme entraînant l'expulsion définitive du régiment.
+                    <p class="text-[10px] text-gray-500 mt-4">Dernière mise à jour par le Commandement 104th</p>
+                </div>
+
+                <!-- Article 1 -->
+                <div id="r1" class="mb-10 scroll-mt-24">
+                    <h3 class="text-xl text-blue-400 tech-font border-b border-blue-900/30 pb-2 mb-4">Article 1 : Les Salons Textuels</h3>
+                    <div class="space-y-3">
+                        <p><span class="text-blue-500 font-mono">1.1 :</span> Un langage correct est exigé. Respectez la hiérarchie, notamment en radio RP.</p>
+                        <p><span class="text-blue-500 font-mono">1.2 :</span> Respect obligatoire entre membres en radio HRP (pas d’insultes, pas de provocations, etc.).</p>
+                        <p><span class="text-blue-500 font-mono">1.3 :</span> Il est interdit d’écrire dans les salons suivants : <strong>documents</strong>, <strong>promo-rétro</strong>, et <strong>blâmes</strong>.</p>
+                        <p><span class="text-blue-500 font-mono">1.4 :</span> Pour toute formation, effectuez une demande dans <strong>radio-rp</strong>.</p>
+                    </div>
+                </div>
+
+                <!-- Article 2 -->
+                <div id="r2" class="mb-10 scroll-mt-24">
+                    <h3 class="text-xl text-blue-400 tech-font border-b border-blue-900/30 pb-2 mb-4">Article 2 : Les Rapports</h3>
+                    <div class="space-y-3">
+                        <p><span class="text-blue-500 font-mono">2.1 :</span> Un rapport doit contenir au minimum 3 lignes complètes (en résolution 1920x1080).</p>
+                        <p><span class="text-blue-500 font-mono">2.2 :</span> Les rapports peuvent concerner des missions ou des actions passives.</p>
+                        <p><span class="text-blue-500 font-mono">2.3 :</span> Mentionnez (@) le responsable des rapports en place.</p>
+                    </div>
+                </div>
+
+                <!-- Article 3 -->
+                <div id="r3" class="mb-10 scroll-mt-24">
+                    <h3 class="text-xl text-blue-400 tech-font border-b border-blue-900/30 pb-2 mb-4">Article 3 : Promotions et Rétrogradations (Partie 1)</h3>
+                    <div class="space-y-3">
+                        <p><span class="text-blue-500 font-mono">3.1 :</span> Les recrutements se font via le formulaire dans <strong>rapport-de-recrutement</strong>.</p>
+                        <p><span class="text-blue-500 font-mono">3.2 :</span> Toutes les notations sont automatiquement mises à jour sur la page principale. Ne mentionnez pas la note. Consultation possible dans <strong>casier-de-recrutement-104th</strong>.</p>
+                        <p><span class="text-blue-500 font-mono">3.3 :</span> Dans ce document, demandez les permissions d’écriture via "partager", en précisant votre matricule et votre grade.</p>
+                        <p><span class="text-blue-500 font-mono">3.4 :</span> Si vous n’obtenez pas de réponse, demandez à un officier.</p>
+                        <p><span class="text-blue-500 font-mono">3.5 :</span> Il est interdit d’écrire sur la première page du document.</p>
+                        <p><span class="text-blue-500 font-mono">3.6 :</span> Modification de la note autorisée en page 2 si une unité mérite une promotion.</p>
+                        <p><span class="text-blue-500 font-mono">3.7 :</span> Dès le grade de <strong>Sergent</strong> (avec formation Recrutement), vous êtes désigné <strong>Instructeur de Recrutement</strong>.</p>
+                        <p><span class="text-blue-500 font-mono">3.8 :</span> Autorisation de former les autres membres à la procédure de recrutement.</p>
+                        <p><span class="text-blue-500 font-mono">3.9 :</span> Clarté et concision obligatoires. Sanctions en cas de manquement.</p>
+                    </div>
+                </div>
+
+                <!-- Article 4 -->
+                <div id="r4" class="mb-10 scroll-mt-24">
+                    <h3 class="text-xl text-blue-400 tech-font border-b border-blue-900/30 pb-2 mb-4">Article 4 : Promotions, Discipline et Absences</h3>
+                    <div class="space-y-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="p-4 bg-gray-800/40 rounded border border-gray-700">
+                                <h4 class="text-sm font-bold text-white mb-2 underline">PROTOCOLES PROMOTIONNELS</h4>
+                                <ul class="text-xs space-y-2">
+                                    <li>• Signaler tout recrutement dans <strong>promos-rétros</strong>.</li>
+                                    <li>• Dès <strong>2nd Lieutenant</strong>, MP un officier avec la liste (photo TAB).</li>
+                                    <li>• Réclamer une promotion = décalage d'une semaine.</li>
+                                    <li>• 1 rapport/semaine obligatoire (hors recrutement).</li>
+                                    <li>• Promotion CPL : Formations AT-TE, Bombe, Terminal, Data Center et SDM obligatoires.</li>
+                                </ul>
+                            </div>
+                            <div class="p-4 bg-red-900/20 rounded border border-red-900/30">
+                                <h4 class="text-sm font-bold text-red-400 mb-2 underline">BARÈME DES BLÂMES</h4>
+                                <ul class="text-xs space-y-2">
+                                    <li><strong class="text-red-500">1 Blâme :</strong> Avertissement oral.</li>
+                                    <li><strong class="text-red-500">2 Blâmes :</strong> Rétrogradation (ou expulsion si CT).</li>
+                                    <li><strong class="text-red-500">3 Blâmes :</strong> Expulsion immédiate.</li>
+                                </ul>
                             </div>
                         </div>
-                        <div id="r5">
-                            <h3>Article 5 : Sécurité de l'Armurerie</h3>
-                            <p>La 104th dispose d'une autorité totale au sein de l'armurerie. Le protocole d'accès est strict.</p>
+
+                        <div class="mt-4">
+                            <h4 class="text-white font-bold text-sm mb-2">4.2 - Les Absences & Vocaux</h4>
+                            <div class="bg-blue-900/10 p-4 rounded border border-blue-900/20 text-sm">
+                                <p>• Signalement obligatoire dans le salon <strong>absence</strong> selon le modèle.</p>
+                                <p>• Pose de l'absence au plus tard le jour-même.</p>
+                                <p>• Présence <strong>Radio RP</strong> obligatoire en mission. Règles fixées par le plus haut gradé.</p>
+                                <p>• Salons Radio-1/2 sont <strong>HRP</strong>. Soundboard interdit si dérangeant.</p>
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <h4 class="text-white font-bold text-sm mb-2">4.4 - Tenue & Équipement</h4>
+                            <div class="space-y-2 text-sm">
+                                <p>• L’armure doit respecter les restrictions (voir site/docs). Spécialisation > Grade.</p>
+                                <p>• <strong>Béret :</strong> Code Blanc (autorisé), Code Marron (interdit).</p>
+                                <div class="highlight p-3 bg-gray-800/60 rounded text-xs italic">
+                                    Retrait d'armure interdit sauf : Quartiers, Armurerie (réparation), Infirmerie, Vestiaires.
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
+
+                <!-- Article 5 -->
+                <div id="r5" class="mb-10 scroll-mt-24">
+                    <h3 class="text-xl text-blue-400 tech-font border-b border-blue-900/30 pb-2 mb-4">Article 5 : L’Armurerie</h3>
+                    <div class="space-y-4">
+                        <p>La 104th a autorité dans l’armurerie, peu importe le grade en face (sauf Amiral & BRS).</p>
+                        <div class="p-4 border-l-4 border-red-600 bg-red-900/10">
+                            <h4 class="text-white font-bold mb-2">PROTOCOLE D'ENTRÉE :</h4>
+                            <ol class="list-decimal ml-5 space-y-1 text-sm">
+                                <li>Retrait du casque obligatoire (sauf BOS).</li>
+                                <li>Présentation de la carte d'identité.</li>
+                                <li>Après 3 sommations : Passage au stade 1 (arme sortie) et appel des Shock Troopers.</li>
+                            </ol>
+                            <p class="mt-2 text-xs text-red-400 italic">En cas de tir ou absence de Shock, riposte autorisée.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 6 & 7 -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
+                    <div id="r6" class="scroll-mt-24">
+                        <h3 class="text-xl text-blue-400 tech-font border-b border-blue-900/30 pb-2 mb-4">Article 6 : Les Quartiers</h3>
+                        <p class="text-sm">Vocal HRP autorisé (soundboard interdit), sauf ordre contraire d’un officier.</p>
+                    </div>
+                    <div id="r7" class="scroll-mt-24">
+                        <h3 class="text-xl text-blue-400 tech-font border-b border-blue-900/30 pb-2 mb-4">Article 7 : Stockage</h3>
+                        <p class="text-sm mb-2">Formulaire <strong>stockage-maintenance</strong> obligatoire à chaque remise/réparation.</p>
+                        <p class="text-xs text-red-500 font-mono">!! Toute erreur sera sanctionnée.</p>
+                    </div>
+                </div>
+
+                <!-- Article 8 -->
+                <div id="r8" class="mb-10 scroll-mt-24">
+                    <h3 class="text-xl text-blue-400 tech-font border-b border-blue-900/30 pb-2 mb-4">Article 8 : Durant les Missions</h3>
+                    <div class="space-y-3 text-sm">
+                        <p>• Suivre les ordres du <strong>Commandant de Mission 104th</strong>, quel que soit son grade.</p>
+                        <p>• Silence radio : Interdiction de parler sans autorisation (utilisez PDP Oral + Nom).</p>
+                        <p>• Création de squad : Le premier arrivé tape <code class="text-blue-400">!createsquad 104th</code>.</p>
+                        <div class="p-3 bg-blue-900/20 rounded border border-blue-500/30 font-mono text-[11px]">
+                            <strong>LOGISTIQUE MUNITIONS (Devant CMD Flotte) :</strong><br>
+                            3 Bleues - 2 Rouges - 2 Jaunes
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Article 9 -->
+                <div id="r9" class="mb-10 scroll-mt-24">
+                    <h3 class="text-xl text-blue-400 tech-font border-b border-blue-900/30 pb-2 mb-4">Article 9 : Départ et Retour</h3>
+                    <div class="space-y-3 text-sm">
+                        <p><strong>Réunion HG :</strong> Colonne par grade décroissant à l'entrée du Code Marron (Garde à vous).</p>
+                        <p><strong>Retour Mission :</strong> Colonne par grade décroissant à l'entrée des quartiers 104th.</p>
+                        <p><strong>Débriefing :</strong> File devant l'estrade au garde à vous dans les quartiers.</p>
+                    </div>
+                </div>
+
+                <!-- Article 10 -->
+                <div id="r10" class="mb-10 scroll-mt-24">
+                    <h3 class="text-xl text-blue-400 tech-font border-b border-blue-900/30 pb-2 mb-4">Article 10 : Entraînement</h3>
+                    <ul class="list-disc ml-5 space-y-2 text-sm">
+                        <li>Notification obligatoire dans le canal <strong>entraînement</strong>.</li>
+                        <li>Notifier gérant/co-gérant pour tout report ou annulation.</li>
+                        <li>Réalisation d'un entraînement obligatoire pour monter <strong>Officier Supérieur</strong>.</li>
+                    </ul>
+                </div>
+
+                <!-- Article 11, 12, 13 -->
+                <div id="r11" class="mb-10 scroll-mt-24">
+                    <h3 class="text-xl text-blue-400 tech-font border-b border-blue-900/30 pb-2 mb-4">Article 11 : Jedi Régimentaire</h3>
+                    <p class="text-sm">Quotas obligatoires pour les phases de test. Signalement immédiat au Maître de l'Ordre en cas de non-respect du règlement.</p>
+                </div>
+
+                <div id="r12" class="mb-10 scroll-mt-24">
+                    <h3 class="text-xl text-blue-400 tech-font border-b border-blue-900/30 pb-2 mb-4">Article 12 : ARC ALPHA Régimentaire</h3>
+                    <p class="text-sm">Grade initial : <strong>Capitaine</strong>. Rôle : Discipline et Entraînements (Co-gérant symbolique). Ne doit pas être le rédacteur principal des docs de gérance.</p>
+                </div>
+
+                <div id="r13" class="mb-10 scroll-mt-24">
+                    <h3 class="text-xl text-blue-400 tech-font border-b border-blue-900/30 pb-2 mb-4">Article 13 : ARC TROOPER</h3>
+                    <div class="space-y-3 text-sm">
+                        <p>• Appartenance à la <strong>Wolfpack</strong> et pré-tests avec l'ARC Alpha requis.</p>
+                        <p>• Autorisation du <strong>CMDM 3636</strong> nécessaire pour postuler.</p>
+                        <p>• Autorité limitée au grade : Rôle d'entraînement et de discipline uniquement.</p>
+                        <p>• <strong>Spécialisation :</strong> Seul le personnage <span class="text-blue-400">Howl</span> peut rejoindre la Blaze Trooper.</p>
+                    </div>
+                </div>
+
+                <!-- Footer du Document -->
+                <div class="mt-12 pt-6 border-t border-gray-800 text-center">
+                    <p class="text-[10px] tech-font text-blue-900 tracking-[0.3em]">CLONE PROTOCOL - 104TH BATTALION - TRANSMISSION SECURE</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
             <!-- 9. SÉCURITÉ INCENDIE -->
             <section id="securite" class="page-section hidden">
-                <div class="holo-panel p-8 border-t-4 border-red-600 rounded">
-                     <h2 class="text-3xl text-white tech-font mb-4 flex items-center">
-                        <i data-lucide="flame" class="text-red-500 mr-4"></i> SÉCURITÉ INCENDIE
-                    </h2>
-                    <div class="grid lg:grid-cols-2 gap-8 rp-doc">
-                        <div>
-                            <h3 class="mt-0">ZONES À RISQUE</h3>
-                            <ul class="list-disc list-inside text-sm space-y-2">
-                                <li><strong>Armurerie:</strong> Outils chalumeau, Munitions.</li>
-                                <li><strong>Infirmerie:</strong> Noyau, Incinérateur.</li>
-                                <li><strong>Salle du Noyau:</strong> Risque ÉLEVÉ.</li>
-                                <li><strong>Hangar:</strong> Carburant.</li>
+    <div class="flex flex-col lg:flex-row gap-8">
+        <!-- SOMMAIRE & ALERT STATUS -->
+        <div class="lg:w-1/4">
+            <div class="holo-panel p-4 sticky top-24 rounded border-l-2 border-red-500 bg-gray-900/50 backdrop-blur-sm">
+                <h3 class="text-red-400 font-bold mb-4 tech-font tracking-wider text-sm">DOCUMENTS DE BORD</h3>
+                <ul class="space-y-2 text-xs font-mono text-gray-400">
+                    <li><a href="#r-zones" class="hover:text-red-300 transition flex items-center gap-2"><span>></span> 1. Zones à Risques</a></li>
+                    <li><a href="#r-vigilance" class="hover:text-red-300 transition flex items-center gap-2"><span>></span> 2. Vigilance & Procédures</a></li>
+                    <li><a href="#r-evo" class="hover:text-red-300 transition flex items-center gap-2"><span>></span> 3. Équipement EVO</a></li>
+                    <li><a href="#r-autorisations" class="hover:text-red-300 transition flex items-center gap-2"><span>></span> 4. Intervenants Autorisés</a></li>
+                    <li><a href="#r-protocoles" class="hover:text-red-300 transition flex items-center gap-2"><span>></span> 5. Protocoles d'Urgence</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- CONTENU PRINCIPAL -->
+        <div class="lg:w-3/4 holo-panel p-8 rounded rp-doc bg-gray-900/30 text-gray-300 leading-relaxed border-t-2 border-red-900/50">
+            <!-- Header -->
+            <div class="text-center mb-10 border-b border-gray-700 pb-6">
+                <h2 class="text-3xl text-white tech-font mb-2">SÉCURITÉ INCENDIE - VÉNATOR</h2>
+                <h3 class="text-sm text-red-500 font-mono tracking-widest uppercase italic">Marine Républicaine - 104th Wolf Pack</h3>
+                <p class="text-[10px] text-gray-500 mt-4 uppercase tracking-tighter">Accès restreint aux personnels habilités</p>
+            </div>
+
+            <!-- 1. RISQUES D'INCENDIE -->
+            <div id="r-zones" class="mb-12 scroll-mt-24">
+                <h3 class="text-xl text-red-400 tech-font border-b border-red-900/30 pb-2 mb-6 flex items-center gap-3">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/></svg>
+                    01. ANALYSE DES RISQUES PAR ZONE
+                </h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <!-- Column 1 -->
+                    <div class="space-y-4">
+                        <div class="bg-gray-800/40 p-3 rounded border-l-2 border-orange-500">
+                            <span class="text-orange-400 text-xs font-bold uppercase">1. Armurerie</span>
+                            <ul class="text-[11px] list-disc list-inside text-gray-400 mt-1">
+                                <li>Chalumeaux, Frictions (colonnes), Armement lourd</li>
                             </ul>
                         </div>
-                        <div>
-                            <h3 class="mt-0">PROCÉDURES</h3>
-                            <p><strong>PROTOCOLE 1:</strong> Détection > Tarmac > Patrouilles.</p>
-                            <p><strong>PROTOCOLE 2:</strong> Confirmé > Combat feu > Prép LAAT.</p>
-                            <p><strong>PROTOCOLE 3:</strong> Incontrôlable > Évacuation.</p>
+                        <div class="bg-gray-800/40 p-3 rounded border-l-2 border-orange-500">
+                            <span class="text-orange-400 text-xs font-bold uppercase">2. Tarmac & 4. Hangar</span>
+                            <ul class="text-[11px] list-disc list-inside text-gray-400 mt-1">
+                                <li>Décollage / Atterrissage, Flux thermique propulseurs</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-800/40 p-3 rounded border-l-2 border-orange-500">
+                            <span class="text-orange-400 text-xs font-bold uppercase">3. Infirmerie</span>
+                            <ul class="text-[11px] list-disc list-inside text-gray-400 mt-1">
+                                <li>Robots, IRM, Noyau d’alim, Incinérateur d'autopsie</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-800/40 p-3 rounded border-l-2 border-red-600">
+                            <span class="text-red-500 text-xs font-bold uppercase">5. Salle du Noyau (Critique)</span>
+                            <ul class="text-[11px] list-disc list-inside text-gray-400 mt-1">
+                                <li>Noyaux, Installations électriques haute tension</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-800/40 p-3 rounded border-l-2 border-orange-500">
+                            <span class="text-orange-400 text-xs font-bold uppercase">6. Zone Carcérale</span>
+                            <ul class="text-[11px] list-disc list-inside text-gray-400 mt-1">
+                                <li>Portes lasers, Postes de contrôles, Risque humain</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-800/40 p-3 rounded border-l-2 border-orange-500">
+                            <span class="text-orange-400 text-xs font-bold uppercase">7. Détente & 9. Mess</span>
+                            <ul class="text-[11px] list-disc list-inside text-gray-400 mt-1">
+                                <li>Projecteurs, Alcool, Fours, Frigidaires</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-800/40 p-3 rounded border-l-2 border-orange-500">
+                            <span class="text-orange-400 text-xs font-bold uppercase">8. Citadelle</span>
+                            <ul class="text-[11px] list-disc list-inside text-gray-400 mt-1">
+                                <li>Tirs réels, Droïdes, Frictions des modules</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Column 2 -->
+                    <div class="space-y-4">
+                        <div class="bg-gray-800/40 p-3 rounded border-l-2 border-red-600">
+                            <span class="text-red-500 text-xs font-bold uppercase">10. Ponts EM & 13. Data Center</span>
+                            <ul class="text-[11px] list-disc list-inside text-gray-400 mt-1">
+                                <li>Consoles, Tables holographiques, Panneaux électriques</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-800/40 p-3 rounded border-l-2 border-orange-500">
+                            <span class="text-orange-400 text-xs font-bold uppercase">11. Salles du Bouclier</span>
+                            <ul class="text-[11px] list-disc list-inside text-gray-400 mt-1">
+                                <li>Installations électriques massives</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-800/40 p-3 rounded border-l-2 border-orange-500">
+                            <span class="text-orange-400 text-xs font-bold uppercase">12. Salle d'entraînement</span>
+                            <ul class="text-[11px] list-disc list-inside text-gray-400 mt-1">
+                                <li>Surcharge des modules d’entraînement</li>
+                            </ul>
+                        </div>
+                        <div class="bg-gray-800/40 p-3 rounded border-l-2 border-red-600">
+                            <span class="text-red-500 text-xs font-bold uppercase">14. Salle des Machines</span>
+                            <ul class="text-[11px] list-disc list-inside text-gray-400 mt-1">
+                                <li>Machinerie lourde, Turbines, Panneaux de contrôle</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
+
+            <!-- 2. PROCÉDURES -->
+            <div id="r-vigilance" class="mb-12 scroll-mt-24">
+                <h3 class="text-xl text-red-400 tech-font border-b border-red-900/30 pb-2 mb-6 flex items-center gap-3">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/></svg>
+                    02. PROTOCOLES DE VIGILANCE
+                </h3>
+                <div class="space-y-4 text-sm">
+                    <div class="p-4 bg-gray-800/60 rounded border border-gray-700">
+                        <p class="mb-3 font-bold text-white underline">Manipulation de matériaux :</p>
+                        <p class="text-xs text-gray-400">Toute manipulation de carburants, lubrifiants ou composants chimiques doit être effectuée dans des zones ventilées et sous supervision stricte.</p>
+                    </div>
+                    <div class="p-4 bg-gray-800/60 rounded border border-gray-700">
+                        <p class="mb-3 font-bold text-white underline">Utilisation électrique :</p>
+                        <p class="text-xs text-gray-400">Inspection régulière des câbles et générateurs pour éviter les courts-circuits.</p>
+                    </div>
+                    <div class="p-4 bg-gray-800/60 rounded border border-gray-700">
+                        <p class="mb-3 font-bold text-white underline">Mesures d'urgence (FEU) :</p>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-2 mt-2">
+                            <div class="p-2 bg-red-900/10 border border-red-900/30 text-center rounded">
+                                <span class="text-red-400 block font-bold text-[10px]">DÉTECTION</span>
+                                <span class="text-[9px]">Alerte radio immédiate Marine/Flotte.</span>
+                            </div>
+                            <div class="p-2 bg-red-900/10 border border-red-900/30 text-center rounded">
+                                <span class="text-red-400 block font-bold text-[10px]">CONTENIR</span>
+                                <span class="text-[9px]">Utilisation extincteurs. Priorité EVO.</span>
+                            </div>
+                            <div class="p-2 bg-red-900/10 border border-red-900/30 text-center rounded">
+                                <span class="text-red-400 block font-bold text-[10px]">ÉVACUATION</span>
+                                <span class="text-[9px]">Code Noir : Évacuation totale requise.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. TENUE EVO -->
+            <div id="r-evo" class="mb-12 scroll-mt-24">
+                <h3 class="text-xl text-blue-400 tech-font border-b border-blue-900/30 pb-2 mb-6">03. UNITÉ SPÉCIALISÉE : TENUE EVO</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-4">
+                        <p class="text-sm font-bold text-white">CARACTÉRISTIQUES DE LA COMBINAISON :</p>
+                        <ul class="space-y-2 text-xs text-gray-400">
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Visière renforcée anti-éclats</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Système de respiration autonome (toxines/fumées)</li>
+                            <li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500 rounded-full"></span> Gants thermiques et ignifugés</li>
+                        </ul>
+                        <div class="p-3 bg-red-600/10 border border-red-600 rounded text-red-500 text-[11px] font-bold">
+                            ATTENTION : L'accès aux locaux techniques est strictement interdit sans la tenue EVO. Inspection obligatoire avant/après.
+                        </div>
+                    </div>
+                    <div class="hidden md:flex justify-center">
+                        <div class="w-32 h-32 border-2 border-blue-500/30 rounded-full flex items-center justify-center relative bg-blue-500/5">
+                             <span class="text-blue-500 tech-font text-xs">EVO-01</span>
+                             <div class="absolute inset-0 animate-ping opacity-20 border border-blue-400 rounded-full"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. INTERVENANTS -->
+            <div id="r-autorisations" class="mb-12 scroll-mt-24">
+                <h3 class="text-xl text-red-400 tech-font border-b border-red-900/30 pb-2 mb-6">04. MATRICE D'INTERVENTION</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left text-[11px] font-mono">
+                        <thead>
+                            <tr class="border-b border-gray-700 text-gray-500 italic">
+                                <th class="py-2">ZONE</th>
+                                <th class="py-2">UNITÉS AUTORISÉES</th>
+                                <th class="py-2">PRIORITÉ / NOTES</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-gray-800">
+                            <tr><td class="py-2 text-white">Armurerie / Prison</td><td class="py-2">104th</td><td class="py-2">BOS si indisponible</td></tr>
+                            <tr><td class="py-2 text-white">Tarmac / Hangar</td><td class="py-2">Toute unité + extincteur</td><td class="py-2 text-orange-400">Priorité 104th / 21st</td></tr>
+                            <tr><td class="py-2 text-white">Infirmerie / Mess</td><td class="py-2">Toute unité + extincteur</td><td class="py-2 text-orange-400">Priorité 104th / 21st</td></tr>
+                            <tr><td class="py-2 text-white">Salle du Noyau</td><td class="py-2">21st + 104th</td><td class="py-2 text-red-500">BOS en dernier recours</td></tr>
+                            <tr><td class="py-2 text-white">Ponts EM / Shields</td><td class="py-2">104th</td><td class="py-2">BOS si indisponible</td></tr>
+                            <tr><td class="py-2 text-white">Data Center / Machines</td><td class="py-2">104th</td><td class="py-2">BOS si indisponible</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- 5. RALLIEMENT ET PROTOCOLES -->
+            <div id="r-protocoles" class="mb-8 scroll-mt-24">
+                <h3 class="text-xl text-red-400 tech-font border-b border-red-900/30 pb-2 mb-6">05. RALLIEMENT & PROTOCOLES HG</h3>
+                
+                <!-- Rally Points -->
+                <div class="flex gap-4 mb-8">
+                    <div class="flex-1 p-3 bg-gray-800/40 border border-gray-700 text-center rounded">
+                        <span class="text-blue-400 block text-xs font-bold">POINT A</span>
+                        <span class="text-[10px]">Hangar Principal / Tarmac</span>
+                    </div>
+                    <div class="flex-1 p-3 bg-gray-800/40 border border-gray-700 text-center rounded">
+                        <span class="text-blue-400 block text-xs font-bold">POINT B</span>
+                        <span class="text-[10px]">Hangars Latéraux</span>
+                    </div>
+                </div>
+
+                <!-- Protocols levels -->
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4 p-4 bg-blue-900/10 border border-blue-900/30 rounded">
+                        <div class="bg-blue-600 text-black px-2 py-1 tech-font text-xs font-bold">LVL 01</div>
+                        <div>
+                            <p class="text-xs font-bold text-white uppercase tracking-wider">Détection de fumée</p>
+                            <p class="text-[10px] text-gray-400">Tous les régiments se dirigent sur le tarmac. Seules les unités aptes effectuent des patrouilles de recherche.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-4 bg-orange-900/10 border border-orange-900/30 rounded">
+                        <div class="bg-orange-600 text-black px-2 py-1 tech-font text-xs font-bold">LVL 02</div>
+                        <div>
+                            <p class="text-xs font-bold text-white uppercase tracking-wider">Incendie confirmé</p>
+                            <p class="text-[10px] text-gray-400">Unités EVO au combat. Préparation des LAAT pour éventuelle évacuation sectorielle.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-4 bg-red-900/20 border border-red-600 rounded">
+                        <div class="bg-red-600 text-black px-2 py-1 tech-font text-xs font-bold">LVL 03</div>
+                        <div>
+                            <p class="text-xs font-bold text-white uppercase tracking-wider">Incendie incontrôlable</p>
+                            <p class="text-[10px] text-gray-400">Évacuation imminente de la base ou du Vénator. Priorité survie.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="mt-12 pt-6 border-t border-gray-800 text-center">
+                <p class="text-[9px] tech-font text-red-900 tracking-[0.4em]">FIRE PROTOCOL - REPUBLIC NAVY - Wolf Pack Division</p>
+            </div>
+        </div>
+    </div>
+</section>
 
             <!-- 10. TENUES -->
-            <section id="tenues" class="page-section hidden">
-                <h2 class="text-3xl text-white tech-font mb-6">GUIDE DES UNIFORMES</h2>
-                <div class="grid md:grid-cols-4 gap-4">
-                    <div class="holo-panel p-4 text-center cursor-pointer group hover:border-white transition" onclick="openTenueModal('ct')">
-                        <div class="text-4xl font-bold text-gray-600 mb-2">CT</div>
-                        <h3 class="text-white font-bold">SOLDAT</h3>
+            
+   <section id="tenues" class="page-section">
+    <!-- HEADER -->
+    <div class="text-center mb-10">
+        <h2 class="text-4xl text-white tech-font mb-2">GUIDE DES UNIFORMES</h2>
+        <div class="flex justify-center items-center gap-4 text-[10px] uppercase tracking-widest text-slate-500 font-mono">
+            <span>Bataillon 104th</span>
+            <span class="text-slate-700">|</span>
+            <span>Standardisation Vestimentaire</span>
+        </div>
+    </div>
+
+    <!-- PARTIE 1 : TENUES STANDARDS (SANS SPÉ) -->
+    <div class="mb-12">
+        <h3 class="text-lg text-slate-400 tech-font border-b border-slate-800 pb-2 mb-6 flex items-center gap-3 italic">
+            <i data-lucide="shield" class="w-4 h-4"></i> 01. RÉGLEMENTATION PAR GRADE
+        </h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- CT / CT ASP -->
+            <div class="holo-panel p-3 rounded border-t-2 border-slate-500/30 bg-slate-900/20 flex gap-4 items-stretch transition hover:bg-slate-900/40">
+                <div class="w-2/5 aspect-[2/3] bg-black/40 rounded border border-slate-800 flex items-center justify-center flex-shrink-0">
+                    <span class="text-[9px] text-slate-700 italic text-center px-1">[IMG CT]</span>
+                </div>
+                <div class="flex flex-col justify-between py-1">
+                    <div>
+                        <h4 class="text-slate-200 font-bold text-sm leading-tight uppercase">CT / CT ASP</h4>
+                        <p class="text-[9px] text-slate-400 font-mono">RANK: SOLDAT</p>
                     </div>
-                    <div class="holo-panel p-4 text-center cursor-pointer group hover:border-green-500 transition" onclick="openTenueModal('cpl')">
-                        <div class="text-4xl font-bold text-green-600 mb-2">CPL</div>
-                        <h3 class="text-white font-bold">CAPORAL</h3>
-                    </div>
-                    <div class="holo-panel p-4 text-center cursor-pointer group hover:border-blue-500 transition" onclick="openTenueModal('sgt')">
-                        <div class="text-4xl font-bold text-blue-600 mb-2">SGT</div>
-                        <h3 class="text-white font-bold">SERGENT</h3>
-                    </div>
-                    <div class="holo-panel p-4 text-center cursor-pointer group hover:border-yellow-500 transition" onclick="openTenueModal('off')">
-                        <div class="text-4xl font-bold text-yellow-600 mb-2">OFF</div>
-                        <h3 class="text-white font-bold">OFFICIER</h3>
+                    <div class="space-y-1">
+                        <p class="text-[9px] text-slate-400 uppercase font-bold tracking-tighter border-b border-slate-800 pb-1">Restriction :</p>
+                        <p class="text-[10px] text-slate-400 italic">Aucun accessoire autorisé.</p>
                     </div>
                 </div>
-                <div class="mt-8 p-4 border border-red-500 bg-red-900/10 text-center">
-                    <strong class="text-red-400">RÈGLE DU BÉRET :</strong> Code Marron = <span class="text-white underline">STRICTEMENT INTERDIT</span>.
+            </div>
+
+            <!-- CPL / CPL-C -->
+            <div class="holo-panel p-3 rounded border-t-2 border-emerald-600/30 bg-slate-900/20 flex gap-4 items-stretch transition hover:bg-slate-900/40">
+                <div class="w-2/5 aspect-[2/3] bg-black/40 rounded border border-slate-800 flex items-center justify-center flex-shrink-0">
+                    <span class="text-[9px] text-slate-700 italic text-center px-1">[IMG CPL]</span>
                 </div>
-            </section>
+                <div class="flex flex-col justify-between py-1">
+                    <div>
+                        <h4 class="text-slate-200 font-bold text-sm leading-tight uppercase">CPL / CPL-C</h4>
+                        <p class="text-[9px] text-emerald-600 font-mono">RANK: CAPORAL</p>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="text-[9px] text-emerald-500 uppercase font-bold tracking-tighter border-b border-slate-800 pb-1">Ajout :</p>
+                        <ul class="text-[10px] text-slate-400 leading-tight">
+                            <li>• Gunpouch right</li>
+                            <li>• Gun right</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SGT / SGT-C -->
+            <div class="holo-panel p-3 rounded border-t-2 border-sky-600/30 bg-slate-900/20 flex gap-4 items-stretch transition hover:bg-slate-900/40">
+                <div class="w-2/5 aspect-[2/3] bg-black/40 rounded border border-slate-800 flex items-center justify-center flex-shrink-0">
+                    <span class="text-[9px] text-slate-700 italic text-center px-1">[IMG SGT]</span>
+                </div>
+                <div class="flex flex-col justify-between py-1">
+                    <div>
+                        <h4 class="text-slate-200 font-bold text-sm leading-tight uppercase">SGT / SGT-C</h4>
+                        <p class="text-[9px] text-sky-500 font-mono">RANK: SERGENT</p>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="text-[9px] text-sky-500 uppercase font-bold tracking-tighter border-b border-slate-800 pb-1">Ajout :</p>
+                        <ul class="text-[10px] text-slate-400 leading-tight">
+                            <li>• Binoculars (Base: Up)</li>
+                            <li>• Binoculars (Mission: Down)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ADJ / ADJ-C -->
+            <div class="holo-panel p-3 rounded border-t-2 border-amber-700/30 bg-slate-900/20 flex gap-4 items-stretch transition hover:bg-slate-900/40">
+                <div class="w-2/5 aspect-[2/3] bg-black/40 rounded border border-slate-800 flex items-center justify-center flex-shrink-0">
+                    <span class="text-[9px] text-slate-700 italic text-center px-1">[IMG ADJ]</span>
+                </div>
+                <div class="flex flex-col justify-between py-1">
+                    <div>
+                        <h4 class="text-slate-200 font-bold text-sm leading-tight uppercase">ADJ / ADJ-C</h4>
+                        <p class="text-[9px] text-amber-700 font-mono">RANK: ADJUDANT</p>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="text-[9px] text-amber-600 uppercase font-bold tracking-tighter border-b border-slate-800 pb-1">Ajout :</p>
+                        <ul class="text-[10px] text-slate-400 leading-tight">
+                            <li>• Sun Visor</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LTN / CPT-2nd -->
+            <div class="holo-panel p-3 rounded border-t-2 border-yellow-700/30 bg-slate-900/20 flex gap-4 items-stretch transition hover:bg-slate-900/40">
+                <div class="w-2/5 aspect-[2/3] bg-black/40 rounded border border-slate-800 flex items-center justify-center flex-shrink-0">
+                    <span class="text-[9px] text-slate-700 italic text-center px-1">[IMG LTN]</span>
+                </div>
+                <div class="flex flex-col justify-between py-1">
+                    <div>
+                        <h4 class="text-slate-200 font-bold text-[13px] leading-tight uppercase">2nd LTN / LTN<br>2nd CPT</h4>
+                        <p class="text-[9px] text-yellow-700 font-mono">RANK: OFF.SUBALTERNE</p>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="text-[9px] text-yellow-600 uppercase font-bold tracking-tighter border-b border-slate-800 pb-1">Ajout :</p>
+                        <ul class="text-[10px] text-slate-400 leading-tight">
+                            <li>• Helmet Coms</li>
+
+                            <li class="mt-1 text-red-600 italic">• Kama: Mérite / Officier</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- OFFICIERS & KAMA -->
+            <div class="holo-panel p-3 rounded border-t-2 border-red-700/30 bg-slate-900/20 flex gap-4 items-stretch transition hover:bg-slate-900/40">
+                <div class="w-2/5 aspect-[2/3] bg-black/40 rounded border border-slate-800 flex items-center justify-center flex-shrink-0">
+                    <span class="text-[9px] text-slate-700 italic text-center px-1">[IMG OFF]</span>
+                </div>
+                <div class="flex flex-col justify-between py-1">
+                    <div>
+                        <h4 class="text-slate-200 font-bold text-sm leading-tight uppercase">OFFICIERS SUP.</h4>
+                        <p class="text-[9px] text-red-700 font-mono">RANK: COMMANDEMENT 104TH</p>
+                    </div>
+                    <div class="space-y-1">
+                        <p class="text-[9px] text-red-600 uppercase font-bold tracking-tighter border-b border-slate-800 pb-1">Ajout :</p>
+                        <ul class="text-[9px] text-slate-400 leading-tight">
+                            <li>• Pauldron</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+             <!-- PARTIE 2 : TENUES SPÉCIALES -->
+
+<div class="mb-12">
+
+<h3 class="text-xl text-cyan-400 tech-font border-b border-cyan-900/30 pb-2 mb-6 flex items-center gap-3">
+
+<i data-lucide="zap"></i> 02. UNITÉS SPÉCIALISÉES & ENVIRONNEMENT
+
+</h3>
+
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+<!-- EVO FINCH -->
+
+<div class="holo-panel p-6 rounded bg-blue-900/5 border border-blue-500/20 relative overflow-hidden group">
+
+<div class="absolute top-0 right-0 p-2 bg-blue-500 text-black tech-font text-[9px] font-bold">EVO-01</div>
+
+<h4 class="text-blue-400 font-bold mb-4 uppercase">Tenue EVO "Finch"</h4>
+
+<div class="flex gap-4">
+
+<div class="w-1/3 aspect-[3/4] bg-gray-900 rounded border border-gray-800 flex items-center justify-center">
+
+<span class="text-[9px] text-gray-700 italic text-center px-2"></span>
+
+</div>
+
+<div class="w-2/3 space-y-3">
+
+<div class="text-[10px] bg-blue-900/20 p-2 rounded border border-blue-800/30">
+
+<p class="text-blue-300 font-bold underline">UTILITÉ :</p>
+
+<p class="text-gray-400 italic">Milieu glacial | OBLIGATOIRE en Salle des Machines (SDM).</p>
+
+</div>
+
+<div class="text-[10px] bg-gray-800/40 p-2 rounded">
+
+<p class="text-white font-bold underline">GRADES AUTORISÉS :</p>
+
+<p class="text-gray-400">CT ASP à CPL-C</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- EVO WARWICK -->
+
+<div class="holo-panel p-6 rounded bg-purple-900/5 border border-purple-500/20 relative overflow-hidden group">
+
+<div class="absolute top-0 right-0 p-2 bg-purple-500 text-black tech-font text-[9px] font-bold">EVO-02</div>
+
+<h4 class="text-purple-400 font-bold mb-4 uppercase">Tenue EVO "Warwick"</h4>
+
+<div class="flex gap-4">
+
+<div class="w-1/3 aspect-[3/4] bg-gray-900 rounded border border-gray-800 flex items-center justify-center">
+
+<span class="text-[9px] text-gray-700 italic text-center px-2"></span>
+
+</div>
+
+<div class="w-2/3 space-y-3">
+
+<div class="text-[10px] bg-purple-900/20 p-2 rounded border border-purple-800/30">
+
+<p class="text-purple-300 font-bold underline">UTILITÉ :</p>
+
+<p class="text-gray-400 italic">Milieu glacial | OBLIGATOIRE en Salle des Machines (SDM).</p>
+
+</div>
+
+<div class="text-[10px] bg-gray-800/40 p-2 rounded">
+
+<p class="text-white font-bold underline">GRADES AUTORISÉS :</p>
+
+<p class="text-gray-400">SGT à CPT-2nd</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- EVO HELLWOLF -->
+
+<div class="holo-panel p-6 rounded bg-red-900/5 border border-red-500/20 relative overflow-hidden group">
+
+<div class="absolute top-0 right-0 p-2 bg-red-600 text-white tech-font text-[9px] font-bold">EVO-03</div>
+
+<h4 class="text-red-500 font-bold mb-4 uppercase">Tenue EVO "Hellwolf"</h4>
+
+<div class="flex gap-4">
+
+<div class="w-1/3 aspect-[3/4] bg-gray-900 rounded border border-gray-800 flex items-center justify-center">
+
+<span class="text-[9px] text-gray-700 italic text-center px-2"></span>
+
+</div>
+
+<div class="w-2/3 space-y-3">
+
+<div class="text-[10px] bg-red-900/20 p-2 rounded border border-red-800/30">
+
+<p class="text-red-400 font-bold underline">UTILITÉ :</p>
+
+<p class="text-gray-400 italic">Milieu glacial | OBLIGATOIRE en Salle des Machines (SDM).</p>
+
+</div>
+
+<div class="text-[10px] bg-gray-800/40 p-2 rounded">
+
+<p class="text-white font-bold underline">GRADES AUTORISÉS :</p>
+
+<p class="text-gray-400">CPT à CMD</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- ARF & CDZ -->
+
+<div class="holo-panel p-6 rounded border border-orange-500/20 bg-orange-900/5 relative overflow-hidden group">
+
+<h4 class="text-orange-400 font-bold mb-4 uppercase">Spécialisations Environnementales</h4>
+
+<div class="grid grid-cols-2 gap-4">
+
+<div class="space-y-2">
+
+<p class="text-[10px] text-white font-bold border-b border-orange-800 pb-1 uppercase">Tenue ARF</p>
+
+<ul class="text-[9px] text-gray-400 list-disc list-inside">
+
+<li>Milieu désertique</li>
+
+<li>Poncho/Capuche amovibles</li>
+
+</ul>
+
+<div class="h-16 bg-gray-900 rounded border border-gray-800 flex items-center justify-center mt-2">
+
+<span class="text-[8px] text-gray-700 italic">[Image ARF]</span>
+
+</div>
+
+</div>
+
+<div class="space-y-2">
+
+<p class="text-[10px] text-white font-bold border-b border-orange-800 pb-1 uppercase">Respirateur CDZ</p>
+
+<ul class="text-[9px] text-gray-400 list-disc list-inside">
+
+<li>Milieux anoxiques</li>
+
+<li>Eau, Espace, Gaz toxiques</li>
+
+</ul>
+
+<div class="h-16 bg-gray-900 rounded border border-gray-800 flex items-center justify-center mt-2">
+
+<span class="text-[8px] text-gray-700 italic">[Image CDZ]</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- REGLE DU BERET & FOOTER -->
+
+<div class="mt-8 p-6 border-2 border-red-600 bg-red-900/20 rounded-lg text-center shadow-[0_0_20px_rgba(220,38,38,0.2)]">
+
+<h4 class="text-red-500 tech-font text-xl font-bold mb-2">RÈGLE DU BÉRET : CODE MARRON</h4>
+
+<p class="text-white font-bold uppercase tracking-widest text-lg underline">STRICTEMENT INTERDIT</p>
+
+<p class="text-gray-400 text-xs mt-2 italic font-mono">Tout manquement à cette règle entraînera des sanctions disciplinaires immédiates.</p>
+    </div>
+</section> 
 
         </main>
     </div>
