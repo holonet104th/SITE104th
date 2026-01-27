@@ -218,6 +218,21 @@
 </head>
 <body class="flex flex-col">
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
     <!-- SCANLINES -->
     <div class="scanlines"></div>
 
@@ -236,6 +251,23 @@
             <div id="boot-sub" class="boot-sub">CONNEXION AU RÉSEAU DE LA FLOTTE...</div>
         </div>
     </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- MAIN APP -->
     <div id="app" class="flex-grow flex flex-col opacity-0">
@@ -405,7 +437,30 @@
                 </div>
             </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <!-- 2. EFFECTIFS -->
+
+
             <section id="effectifs" class="page-section hidden">
                 <h2 class="text-3xl text-white tech-font mb-6">REGISTRE DU PERSONNEL</h2>
                 <a href="https://docs.google.com/spreadsheets/d/1Gf97xmsTdAPI-HMrB3UaRW0yd8ECqCHE4TQTtDx_Soo/edit" target="_blank" class="external-link-btn">
@@ -417,7 +472,32 @@
             </section>
             
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <!-- SECTION VÉHICULES (HANGAR TACTIQUE) -->
+
 
 
 <section id="vehicles" class="page-section pb-20">
@@ -620,6 +700,21 @@
     </div>
 </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <!-- 4. LOGISTIQUE -->
             <section id="stock" class="page-section hidden">
                 <h2 class="text-3xl text-white tech-font mb-6">GESTION DES STOCKS</h2>
@@ -631,13 +726,125 @@
                 </div>
             </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <!-- 5. FORMATIONS -->
-            <section id="formations" class="page-section hidden">
-                <h2 class="text-3xl text-white tech-font mb-2">CENTRE D'INSTRUCTION</h2>
-                <p class="text-gray-500 mb-8">Sélectionnez un module pour ouvrir le dossier complet.</p>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="formation-grid"></div>
-            </section
-            >
+
+
+            <section id="formations" class="page-section visible pb-20">
+    <!-- HEADER -->
+    <div class="text-center mb-12">
+        <h2 class="text-4xl text-white tech-font mb-2 tracking-[0.2em]" style="text-shadow: 0 0 15px rgba(124, 144, 177, 0.3);">CENTRE D'INSTRUCTION</h2>
+        <div class="flex justify-center items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-slate-500 font-mono">
+            <span>Base de données tactique</span>
+            <span class="text-slate-700">|</span>
+            <span class="text-blue-400/50">Protocoles de Qualification</span>
+        </div>
+    </div>
+
+    <!-- GRILLE DES MODULES -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="formation-grid">
+        <!-- Les cartes seront générées ici par JS -->
+    </div>
+
+    <!-- ============================================== -->
+    <!-- MODAL CORRIGÉ - VERSION "BLINDÉE" SCROLLABLE -->
+    <!-- ============================================== -->
+    
+    <!-- 1. LE PARENT : Il ne fait QUE gérer le scroll. 
+         IMPORTANT : J'ai retiré 'flex-col' d'ici pour éviter les conflits JS. 
+         'block' (par défaut) est plus sûr pour le scroll. -->
+    <div id="formation-modal" class="fixed inset-0 z-[10000] hidden bg-slate-950/95 backdrop-blur-xl animate-in fade-in duration-300 overflow-y-auto">
+        
+        <!-- 2. LE WRAPPER : Il force le contenu à prendre toute la hauteur.
+             'min-h-screen' assure que le fond couvre tout l'écran même s'il y a peu de texte.
+             'flex flex-col' gère l'alignement header/footer. -->
+        <div class="min-h-screen w-full flex flex-col relative">
+
+            <!-- HEADER DU DOSSIER -->
+            <div class="flex-none flex items-center justify-between p-6 border-b border-blue-900/30 bg-slate-900/50">
+                <div class="flex items-center gap-4">
+                    <div id="modal-icon-container" class="p-3 bg-blue-500/10 rounded border border-blue-500/20">
+                        <!-- Icone place-holder pour test -->
+                        <div class="w-6 h-6 bg-blue-400 rounded-full"></div>
+                    </div>
+                    <div>
+                        <h3 id="modal-title" class="text-2xl text-white tech-font tracking-wider uppercase">TITRE DU DOSSIER</h3>
+                        <p id="modal-category" class="text-[10px] text-blue-400 font-mono tracking-[0.3em]">CLASSIFIÉ</p>
+                    </div>
+                </div>
+                <!-- BOUTON FERMER -->
+                <button onclick="closeFormationModal()" class="cursor-pointer p-3 hover:bg-red-500/10 text-slate-400 hover:text-red-500 transition rounded-full border border-slate-800 z-50">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+
+            <!-- CORPS DU DOSSIER (Le contenu long) -->
+            <!-- 'flex-grow' : Prend tout l'espace disponible.
+                 PAS d'overflow ici, on laisse le parent gérer le scroll. -->
+            <div class="flex-grow p-8 md:p-12 lg:px-24">
+                <div id="modal-content" class="max-w-4xl mx-auto text-slate-300 space-y-8 leading-relaxed">
+                    <!-- Exemple de contenu très long pour tester le scroll -->
+                    <p>Début du rapport...</p>
+                    <div class="h-[1500px] border-l-2 border-blue-900/50 pl-4 py-4">
+                        <p>Ceci est une zone de test très haute (1500px) pour forcer le scroll.</p>
+                        <br>
+                        <p>Si tu vois ce texte en descendant, c'est que ça marche.</p>
+                    </div>
+                    <p>Fin du rapport.</p>
+                </div>
+            </div>
+
+            <!-- FOOTER DU DOSSIER -->
+            <div class="flex-none p-4 border-t border-slate-900 bg-slate-950 text-center">
+                <p class="text-[9px] tech-font text-slate-600 tracking-[0.5em]">DOCUMENT CLASSIFIÉ - RÉPUBLIQUE GALACTIQUE - 104TH BATTALION</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <!-- 6. SPÉCIALISATIONS -->
 
@@ -843,6 +1050,25 @@
         </div>
     </div>
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <!-- 7. RECRUTEMENT -->
             <section id="recrutement" class="page-section hidden">
                 <h2 class="text-3xl text-white tech-font mb-6 text-center">BUREAU DE RECRUTEMENT</h2>
@@ -853,6 +1079,26 @@
                     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScaBR4CmNTtmJ0BKRbGFqV5Fy4dHGwXvAsxvO0wNdUuNiLDGg/viewform?embedded=true" loading="lazy" style="width: 100%; height: 100%; border: none;"></iframe>
                 </div>
             </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
             <!-- 8. RÈGLEMENT -->
 
@@ -1071,7 +1317,28 @@
         </div>
     </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <!-- 9. SÉCURITÉ INCENDIE -->
+
             <section id="securite" class="page-section hidden">
     <div class="flex flex-col lg:flex-row gap-8">
         <!-- SOMMAIRE & ALERT STATUS -->
@@ -1312,8 +1579,28 @@
     </div>
 </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             <!-- 10. TENUES -->
             
+
    <section id="tenues" class="page-section">
     <!-- HEADER -->
     <div class="text-center mb-10">
@@ -1333,7 +1620,7 @@
         
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- CT / CT ASP -->
-            <div class="holo-panel p-3 rounded border-t-2 border-slate-500/30 bg-slate-900/20 flex gap-4 items-stretch transition hover:bg-slate-900/40">
+            <div class="holo-panel p-3 rounded border-t-2 border-slate-500/30 bg-gradient-to-b from-slate-400/10 via-slate-900/30 to-black flex gap-4 items-stretch transition hover:bg-slate-400/3">
                 <div class="w-2/5 aspect-[2/3] bg-black/40 rounded border border-slate-800 flex items-center justify-center flex-shrink-0">
                     <span class="text-[9px] text-slate-700 italic text-center px-1">[IMG CT]</span>
                 </div>
@@ -1350,7 +1637,7 @@
             </div>
 
             <!-- CPL / CPL-C -->
-            <div class="holo-panel p-3 rounded border-t-2 border-emerald-600/30 bg-slate-900/20 flex gap-4 items-stretch transition hover:bg-slate-900/40">
+            <div class="holo-panel p-3 rounded border-t-2 border-emerald-600/30 bg-gradient-to-b from-emerald-400/10 via-emerald-950/30 to-black flex gap-4 items-stretch transition hover:bg-emerald-400/3">
                 <div class="w-2/5 aspect-[2/3] bg-black/40 rounded border border-slate-800 flex items-center justify-center flex-shrink-0">
                     <span class="text-[9px] text-slate-700 italic text-center px-1">[IMG CPL]</span>
                 </div>
@@ -1370,7 +1657,7 @@
             </div>
 
             <!-- SGT / SGT-C -->
-            <div class="holo-panel p-3 rounded border-t-2 border-sky-600/30 bg-slate-900/20 flex gap-4 items-stretch transition hover:bg-slate-900/40">
+            <div class="holo-panel p-3 rounded border-t-2 border-sky-600/30 bg-gradient-to-b from-sky-400/10 via-sky-950/30 to-black flex gap-4 items-stretch transition hover:bg-sky-400/3">
                 <div class="w-2/5 aspect-[2/3] bg-black/40 rounded border border-slate-800 flex items-center justify-center flex-shrink-0">
                     <span class="text-[9px] text-slate-700 italic text-center px-1">[IMG SGT]</span>
                 </div>
@@ -1390,17 +1677,17 @@
             </div>
 
             <!-- ADJ / ADJ-C -->
-            <div class="holo-panel p-3 rounded border-t-2 border-amber-700/30 bg-slate-900/20 flex gap-4 items-stretch transition hover:bg-slate-900/40">
+            <div class="holo-panel p-3 rounded border-t-2 border-indigo-700/30 bg-gradient-to-b from-indigo-400/10 via-indigo-950/30 to-black flex gap-4 items-stretch transition hover:bg-amber-400/3">
                 <div class="w-2/5 aspect-[2/3] bg-black/40 rounded border border-slate-800 flex items-center justify-center flex-shrink-0">
                     <span class="text-[9px] text-slate-700 italic text-center px-1">[IMG ADJ]</span>
                 </div>
                 <div class="flex flex-col justify-between py-1">
                     <div>
                         <h4 class="text-slate-200 font-bold text-sm leading-tight uppercase">ADJ / ADJ-C</h4>
-                        <p class="text-[9px] text-amber-700 font-mono">RANK: ADJUDANT</p>
+                        <p class="text-[9px] text-indigo-700 font-mono">RANK: ADJUDANT</p>
                     </div>
                     <div class="space-y-1">
-                        <p class="text-[9px] text-amber-600 uppercase font-bold tracking-tighter border-b border-slate-800 pb-1">Ajout :</p>
+                        <p class="text-[9px] text-indigo-600 uppercase font-bold tracking-tighter border-b border-slate-800 pb-1">Ajout :</p>
                         <ul class="text-[10px] text-slate-400 leading-tight">
                             <li>• Sun Visor</li>
                         </ul>
@@ -1409,7 +1696,7 @@
             </div>
 
             <!-- LTN / CPT-2nd -->
-            <div class="holo-panel p-3 rounded border-t-2 border-yellow-700/30 bg-slate-900/20 flex gap-4 items-stretch transition hover:bg-slate-900/40">
+            <div class="holo-panel p-3 rounded border-t-2 border-yellow-700/30 bg-gradient-to-b from-yellow-400/10 via-yellow-950/30 to-black flex gap-4 items-stretch transition hover:bg-yellow-400/3">
                 <div class="w-2/5 aspect-[2/3] bg-black/40 rounded border border-slate-800 flex items-center justify-center flex-shrink-0">
                     <span class="text-[9px] text-slate-700 italic text-center px-1">[IMG LTN]</span>
                 </div>
@@ -1430,7 +1717,7 @@
             </div>
 
             <!-- OFFICIERS & KAMA -->
-            <div class="holo-panel p-3 rounded border-t-2 border-red-700/30 bg-slate-900/20 flex gap-4 items-stretch transition hover:bg-slate-900/40">
+            <div class="holo-panel p-3 rounded border-t-2 border-red-700/30 bg-gradient-to-b from-red-400/10 via-red-950/30 to-black flex gap-4 items-stretch transition hover:bg-red-400/3">
                 <div class="w-2/5 aspect-[2/3] bg-black/40 rounded border border-slate-800 flex items-center justify-center flex-shrink-0">
                     <span class="text-[9px] text-slate-700 italic text-center px-1">[IMG OFF]</span>
                 </div>
@@ -1678,8 +1965,325 @@
         <div class="full-page-body" id="fp-body"></div>
     </div>
 
-    <script>
-        lucide.createIcons();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- SCRIPTS -->
+
+<script>
+    /**
+     * STRUCTURE DE DONNÉES DES FORMATIONS
+     */
+    const formationsData = {
+        "CMD de mission": {
+            category: "COMMANDEMENT",
+            icon: "award",
+            summary: "Gestion d'escouade et coordination stratégique de terrain.",
+            content: `
+                <div class="space-y-12">
+                    <!-- Header Doctrine -->
+                    <div class="border-l-4 border-blue-600 pl-6 py-4 bg-blue-900/10 rounded-r">
+                        <h2 class="text-3xl text-white tech-font mb-2">FORMATION COMMANDEMENT</h2>
+                        <p class="text-blue-300 italic">"Partout où la meute passe, les droïdes trépassent !"</p>
+                        <p class="text-xs text-slate-500 mt-2 font-mono">Instructeur: 3983 Rox</p>
+                    </div>
+
+                    <!-- 1. COMPOSITION DE LA MEUTE -->
+                    <div>
+                        <h3 class="text-xl text-blue-400 tech-font border-b border-blue-900/30 pb-2 mb-6 flex items-center gap-2">
+                            <i data-lucide="users" class="w-5 h-5"></i> I. COMPOSITION DE LA MEUTE
+                        </h3>
+                        <div class="grid gap-6 md:grid-cols-2">
+                            <!-- Wolfpack -->
+                            <div class="bg-slate-900/40 p-4 rounded border border-slate-700/50 flex gap-4">
+                                <div class="w-16 h-16 bg-black/50 rounded-full border border-slate-600 flex items-center justify-center flex-shrink-0 text-[8px] text-slate-500 italic">[Logo WP]</div>
+                                <div>
+                                    <h4 class="text-white font-bold tech-font text-lg">WOLFPACK</h4>
+                                    <p class="text-sm text-slate-300 leading-relaxed">Unités terrestres et aériennes (jetpacks). Reconnaissance, tir longue distance, évacuation. Avant-garde ou première ligne.</p>
+                                </div>
+                            </div>
+                            <!-- Black Wolves -->
+                            <div class="bg-slate-900/40 p-4 rounded border border-slate-700/50 flex gap-4">
+                                 <div class="w-16 h-16 bg-black/50 rounded-full border border-slate-600 flex items-center justify-center flex-shrink-0 text-[8px] text-slate-500 italic">[Logo BW]</div>
+                                <div>
+                                    <h4 class="text-white font-bold tech-font text-lg">BLACK WOLVES</h4>
+                                    <p class="text-sm text-slate-300 leading-relaxed">Unités lourdes (pilotes, heavy gunners). Percent et tiennent la première ligne. Soutien feu important.</p>
+                                </div>
+                            </div>
+                            <!-- Blaze -->
+                            <div class="bg-slate-900/40 p-4 rounded border border-slate-700/50 flex gap-4">
+                                 <div class="w-16 h-16 bg-black/50 rounded-full border border-slate-600 flex items-center justify-center flex-shrink-0 text-[8px] text-slate-500 italic">[Logo Blaze]</div>
+                                <div>
+                                    <h4 class="text-white font-bold tech-font text-lg">BLAZE</h4>
+                                    <p class="text-sm text-slate-300 leading-relaxed">Combat rapproché (lance-flammes, boucliers). Nettoyage de zones, protection VIP. Mur défensif et offensif.</p>
+                                </div>
+                            </div>
+                            <!-- Dryax -->
+                            <div class="bg-slate-900/40 p-4 rounded border border-slate-700/50 flex gap-4">
+                                 <div class="w-16 h-16 bg-black/50 rounded-full border border-slate-600 flex items-center justify-center flex-shrink-0 text-[8px] text-slate-500 italic">[Logo Dryax]</div>
+                                <div>
+                                    <h4 class="text-white font-bold tech-font text-lg">DRYAX</h4>
+                                    <p class="text-sm text-slate-300 leading-relaxed">Médecins (jetpacks). Jamais seuls, jamais en première ligne exposée. Vital pour la survie du régiment.</p>
+                                </div>
+                            </div>
+                            <!-- ARC/RC -->
+                            <div class="bg-slate-900/40 p-4 rounded border border-slate-700/50 flex gap-4 md:col-span-2">
+                                 <div class="w-16 h-16 bg-black/50 rounded-full border border-slate-600 flex items-center justify-center flex-shrink-0 text-[8px] text-slate-500 italic">[Logo ARC]</div>
+                                <div>
+                                    <h4 class="text-white font-bold tech-font text-lg">ARC / RC</h4>
+                                    <p class="text-sm text-slate-300 leading-relaxed">Unités spéciales polyvalentes. Renforts stratégiques sur n'importe quelle ligne. Soutien Wolfpack en reco.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2. FORMATIONS TACTIQUES -->
+                    <div>
+                        <h3 class="text-xl text-blue-400 tech-font border-b border-blue-900/30 pb-2 mb-6 flex items-center gap-2">
+                            <i data-lucide="crosshair" class="w-5 h-5"></i> II. FORMATIONS DE COMBAT
+                        </h3>
+                        
+                        <div class="mb-8">
+                            <div class="p-4 bg-red-900/10 border border-red-500/20 rounded mb-4 text-center">
+                                <strong class="text-red-400 text-sm uppercase">Règle d'Or :</strong>
+                                <span class="text-slate-300 text-sm"> Personne ne doit se placer DEVANT les véhicules.</span>
+                            </div>
+
+                            <div class="grid lg:grid-cols-2 gap-8">
+                                <!-- Protection Véhicule -->
+                                <div class="space-y-4">
+                                    <h4 class="text-white font-bold tech-font border-l-2 border-blue-500 pl-3">A. Protection Véhicule</h4>
+                                    <div class="aspect-video bg-black/60 rounded border border-slate-700 flex items-center justify-center text-slate-600 italic text-xs">
+                                        [Image Schéma Protection Véhicule]
+                                    </div>
+                                    <ul class="text-sm text-slate-300 space-y-2 list-disc list-inside">
+                                        <li><strong>Objectif :</strong> Réparation rapide, couverture latérale.</li>
+                                        <li><strong>Avant/Autour :</strong> <span class="text-red-400">Blaze</span> (Mur défensif).</li>
+                                        <li><strong>Arrière :</strong> <span class="text-zinc-400">Black Wolves</span> (Puissance de feu).</li>
+                                        <li><strong>Flancs/Toits :</strong> <span class="text-blue-400">Wolfpack</span> & <span class="text-sky-400">ARC/RC</span> (Mobilité).</li>
+                                    </ul>
+                                </div>
+
+                                <!-- Avancée Fortifiée -->
+                                <div class="space-y-4">
+                                    <h4 class="text-white font-bold tech-font border-l-2 border-blue-500 pl-3">B. Avancée Fortifiée</h4>
+                                    <div class="aspect-video bg-black/60 rounded border border-slate-700 flex items-center justify-center text-slate-600 italic text-xs">
+                                        [Image Schéma Avancée Fortifiée]
+                                    </div>
+                                    <ul class="text-sm text-slate-300 space-y-2 list-disc list-inside">
+                                        <li><strong>Première ligne :</strong> <span class="text-red-400">Blaze</span> (Encaisser/Nettoyer).</li>
+                                        <li><strong>Deuxième ligne :</strong> <span class="text-zinc-400">Black Wolves</span> (Soutien lourd).</li>
+                                        <li><strong>Arrière :</strong> CT & Médics (Protection).</li>
+                                        <li><strong>Flexible :</strong> Adaptation possible selon situation.</li>
+                                        <li class="text-red-400 italic text-xs">⚠️ Éviter le désordre en cas de bombardement.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-slate-900/30 p-4 rounded border border-slate-800">
+                            <h4 class="text-sm font-bold text-white mb-2 uppercase">Véhicules de Soutien :</h4>
+                            <div class="flex flex-wrap gap-4 text-xs text-slate-400">
+                                <span class="px-2 py-1 bg-slate-800 rounded border border-slate-700"><strong>AT-TE :</strong> Polyvalent/Robuste</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded border border-slate-700"><strong>AT-RT :</strong> Rapide/Mobile</span>
+                                <span class="px-2 py-1 bg-slate-800 rounded border border-slate-700"><strong>TX-225 :</strong> Transport</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 3. LEADERSHIP & SIMULATION -->
+                    <div>
+                        <h3 class="text-xl text-blue-400 tech-font border-b border-blue-900/30 pb-2 mb-6 flex items-center gap-2">
+                            <i data-lucide="activity" class="w-5 h-5"></i> III. EXERCICE PRATIQUE
+                        </h3>
+                        
+                        <div class="bg-slate-800/20 p-4 rounded mb-6 italic text-slate-400 text-sm border-l-2 border-yellow-500">
+                            "Assurez le lead sans stress. Priorité aux placements corrects. En cas de difficulté majeure sur un assaut PDP, stoppez l'opération pour reprendre le contrôle des communications."
+                        </div>
+
+                        <div class="bg-slate-900/50 border border-slate-700 rounded overflow-hidden">
+                            <div class="bg-slate-950/80 p-3 border-b border-slate-800 flex justify-between items-center">
+                                <span class="text-red-400 font-bold tech-font text-sm">SIMULATION : PLANÈTE HOW</span>
+                                <span class="text-[10px] text-slate-500 font-mono">SCÉNARIO: HOSTAGE_RESCUE</span>
+                            </div>
+                            <div class="p-6 grid md:grid-cols-2 gap-6 items-center">
+                                <div class="aspect-video bg-black/60 rounded border border-slate-800 flex items-center justify-center text-slate-600 italic text-xs">
+                                    [Image Carte Simulation How]
+                                </div>
+                                <div class="space-y-4">
+                                    <div class="space-y-2">
+                                        <h5 class="text-white font-bold text-sm underline decoration-blue-500/50">MISSION :</h5>
+                                        <ul class="text-sm text-slate-300 space-y-1">
+                                            <li class="flex gap-2"><span class="text-red-500">1.</span> Libérer les otages piégés.</li>
+                                            <li class="flex gap-2"><span class="text-red-500">2.</span> Désamorcer les bombes (Alpha, Charlie, Delta).</li>
+                                            <li class="flex gap-2"><span class="text-red-500">3.</span> Hacker les terminaux (Secteur Delta).</li>
+                                            <li class="flex gap-2"><span class="text-red-500">4.</span> Couper les verrouillages.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `
+        },
+        "AT-TE": {
+            category: "ARTILLERIE LOURDE",
+            icon: "truck",
+            summary: "Opérations, maintenance et pilotage du marcheur 6-pattes.",
+            content: `<h2 class="text-2xl tech-font text-white mb-6">MANUEL OPÉRATIONNEL : AT-TE</h2><p>XXX (Contenu en cours de rédaction)</p>`
+        },
+        "TX225": {
+            category: "VÉHICULE DE SOUTIEN",
+            icon: "box",
+            summary: "Manipulation et logistique du char d'assaut TX-225.",
+            content: `<h2 class="text-2xl tech-font text-white mb-6">PROTOCOLES TX-225</h2><p>XXX (Contenu en cours de rédaction)</p>`
+        },
+        "AV-7": {
+            category: "ARTILLERIE FIXE",
+            icon: "target",
+            summary: "Déploiement et calcul de trajectoire du canon AV-7.",
+            content: `<h2 class="text-2xl tech-font text-white mb-6">CANON LOURD AV-7</h2><p>XXX (Contenu en cours de rédaction)</p>`
+        },
+        "Bombe": {
+            category: "GÉNIE TACTIQUE",
+            icon: "bomb",
+            summary: "Protocoles de pose et désamorçage d'engins explosifs.",
+            content: `<h2 class="text-2xl tech-font text-red-500 mb-6">DÉMOLITION ET SABOTAGE</h2><p>XXX (Contenu en cours de rédaction)</p>`
+        },
+        "Terminal": {
+            category: "SÉCURITÉ RÉSEAU",
+            icon: "monitor",
+            summary: "Piratage et sécurisation des terminaux de données ennemis.",
+            content: `<h2 class="text-2xl tech-font text-white mb-6">INTRUSION SYSTÈME</h2><p>XXX (Contenu en cours de rédaction)</p>`
+        },
+        "Salle des machines": {
+            category: "MAINTENANCE NAVALE",
+            icon: "settings",
+            summary: "Gestion des noyaux et maintenance des moteurs du Vénator.",
+            content: `<h2 class="text-2xl tech-font text-white mb-6">SÉCURITÉ SDM</h2><p>XXX (Contenu en cours de rédaction)</p>`
+        },
+        "Data center": {
+            category: "CYBER-DÉFENSE",
+            icon: "database",
+            summary: "Protection et archivage des données sensibles du bataillon.",
+            content: `<h2 class="text-2xl tech-font text-white mb-6">ARCHIVES DU DATA CENTER</h2><p>XXX (Contenu en cours de rédaction)</p>`
+        },
+        "Réparation": {
+            category: "SUPPORT TECHNIQUE",
+            icon: "wrench",
+            summary: "Maintenance d'urgence des armures et véhicules légers.",
+            content: `<h2 class="text-2xl tech-font text-white mb-6">MAINTENANCE DE TERRAIN</h2><p>XXX (Contenu en cours de rédaction)</p>`
+        },
+        "Formation régimentaire": {
+            category: "BASE",
+            icon: "users",
+            summary: "Fondamentaux du 104th, discipline et marche militaire.",
+            content: `<h2 class="text-2xl tech-font text-white mb-6">TRADITIONS DU 104TH</h2><p>XXX (Contenu en cours de rédaction)</p>`
+        }
+    };
+
+    /**
+     * LOGIQUE DE RENDU ET INTERACTION
+     */
+    function renderFormations() {
+        const grid = document.getElementById('formation-grid');
+        if (!grid) return;
+
+        grid.innerHTML = Object.entries(formationsData).map(([title, data]) => `
+            <div class="holo-panel p-6 cursor-pointer group hover:bg-blue-900/10 transition-all duration-300 relative overflow-hidden" 
+                 onclick="openFormationModal('${title}')">
+                
+                <div class="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+                    <i data-lucide="${data.icon}" class="w-24 h-24"></i>
+                </div>
+
+                <div class="relative z-10 flex flex-col h-full">
+                    <div class="flex items-start justify-between mb-4">
+                        <div class="p-2 bg-slate-800 rounded text-blue-400 group-hover:text-blue-300 transition-colors">
+                            <i data-lucide="${data.icon}" class="w-6 h-6"></i>
+                        </div>
+                        <span class="text-[8px] font-mono text-slate-600 uppercase tracking-widest">${data.category}</span>
+                    </div>
+                    
+                    <h3 class="text-white font-bold text-lg mb-2 group-hover:text-blue-200 transition-colors uppercase tracking-tight">${title}</h3>
+                    <p class="text-xs text-slate-500 leading-tight flex-grow">${data.summary}</p>
+                    
+                    <div class="mt-6 flex items-center justify-between text-[9px] tech-font text-slate-600 border-t border-slate-800 pt-4">
+                        <span class="group-hover:text-blue-400 transition-colors">OUVRIR DOSSIER</span>
+                        <i data-lucide="chevron-right" class="w-3 h-3 group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+
+    function openFormationModal(title) {
+        const data = formationsData[title];
+        if (!data) return;
+
+        const modal = document.getElementById('formation-modal');
+        const mTitle = document.getElementById('modal-title');
+        const mCategory = document.getElementById('modal-category');
+        const mContent = document.getElementById('modal-content');
+        const mIcon = document.getElementById('modal-icon-container');
+
+        mTitle.innerText = title;
+        mCategory.innerText = data.category;
+        mContent.innerHTML = data.content;
+        mIcon.innerHTML = `<i data-lucide="${data.icon}" class="w-8 h-8 text-blue-400"></i>`;
+
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden'; 
+        
+        if (typeof lucide !== 'undefined') lucide.createIcons();
+    }
+
+    function closeFormationModal() {
+        const modal = document.getElementById('formation-modal');
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = '';
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         // --- DATA ---
         const vehiclesData = [
@@ -1688,32 +2292,6 @@
             { id: "atrt", name: "AT-RT Scout", img: "./img/atrt.jpg", type: "RECO", desc: "Reconnaissance et appui. Très mobile. Pilotes BLW uniquement.", stats: {speed: 90, power: 40, armor: 30} },
             { id: "av7", name: "Canon AV-7", img: "./img/av7.jpg", type: "ARTILLERIE", desc: "Artillerie mobile auto-propulsée. Tir en cloche.", stats: {speed: 10, power: 100, armor: 40} }
         ];
-
-        const formationsList = ["CMD de mission", "AT-TE", "TX225", "AV-7", "Bombe", "Terminal", "Salle des machines", "Data center", "Réparation", "Formation régimentaire"];
-        const specsData = [{name:"WOLFPACK",desc:"L'unité d'élite."}, {name:"DRYAX",desc:"Spécialistes environnementaux."}, {name:"BLACKWOLF",desc:"Opérations noires."}, {name:"BLAZE",desc:"Intervention lourde."}, {name:"ARC Rogue",desc:"Reconnaissance avancée."}];
-        const tenueData = { ct: { title: "SOLDAT", items: ["Aucun accessoire"] }, cpl: { title: "CAPORAL", items: ["Gunpouch", "Gun Right"] }, sgt: { title: "SERGENT", items: ["Binoculars"] }, off: { title: "OFFICIER", items: ["Helmet Coms", "Binoculaire/Sun Visor", "Pauldron"] }};
-
-        // --- RENDERERS ---
-        function renderVehicles() {
-            const grid = document.getElementById('vehicle-grid');
-            if(grid) grid.innerHTML = vehiclesData.map(v => `
-                <div class="holo-panel p-0 flex flex-col md:flex-row group border-l-4 border-blue-500 cursor-pointer hover:bg-gray-800/50 transition" onclick="openVehicleModal('${v.id}')">
-                    <div class="md:w-1/2 h-64 bg-gray-900 relative"><img src="${v.img}" onerror="this.src='https://via.placeholder.com/400?text=${v.name}'" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition"><span class="absolute bottom-2 right-2 bg-black text-blue-400 text-xs px-2 font-bold">${v.type}</span></div>
-                    <div class="p-6 md:w-1/2 flex flex-col justify-center"><h3 class="text-3xl text-white font-bold mb-4">${v.name}</h3><p class="text-sm text-gray-400 mb-4">${v.desc}</p><div class="mt-auto text-right text-blue-400 text-xs font-mono animate-pulse">>>> VOIR FICHE</div></div>
-                </div>`).join('');
-        }
-        function renderFormations() {
-            const grid = document.getElementById('formation-grid');
-            if(grid) grid.innerHTML = formationsList.map(f => `
-                <div class="holo-panel p-6 cursor-pointer group hover:bg-blue-900/20 transition flex items-center justify-between" onclick="openFullPage('${f}')">
-                    <div class="flex items-center space-x-3"><i data-lucide="file-text" class="text-gray-500 group-hover:text-blue-400"></i><span class="text-white font-bold text-lg">${f}</span></div><i data-lucide="maximize-2" class="text-gray-600"></i>
-                </div>`).join('');
-        }
-        function renderSpecs() {
-            const grid = document.getElementById('specs-grid');
-            if(grid) grid.innerHTML = specsData.map(s => `
-                <div class="holo-panel p-8 text-center group hover:border-blue-400 transition flex flex-col items-center"><div class="w-24 h-24 bg-gray-800 rounded-full flex items-center justify-center mb-6 border-2 border-gray-600"><i data-lucide="shield" class="w-10 h-10 text-gray-400"></i></div><h3 class="text-2xl text-white font-bold mb-2">${s.name}</h3><p class="text-sm text-gray-500 mb-6">${s.desc}</p><button class="w-full px-4 py-3 border border-blue-500 text-blue-400 text-xs rounded uppercase font-bold">Accéder</button></div>`).join('');
-        }
         
         // --- DATA STREAM FILLER ---
         function fillDataStream() {
@@ -1813,19 +2391,10 @@
             document.getElementById('modal-overlay').style.display = 'flex';
         }
         function closeModal() { document.getElementById('modal-overlay').style.display = 'none'; }
-        
-        function openFullPage(title) {
-            document.getElementById('fp-title').innerText = title;
-            document.getElementById('fp-body').innerHTML = `<div class="text-center py-20 text-gray-500">Chargement du contenu...</div>`;
-            document.getElementById('full-page-modal').style.display = 'flex';
-        }
-        function closeFullPage() { document.getElementById('full-page-modal').style.display = 'none'; }
 
         // INIT
-        window.addEventListener('load', () => {
-            renderVehicles();
+        window.addEventListener('load', () => {;
             renderFormations();
-            renderSpecs();
             fillDataStream();
             lucide.createIcons();
             runCinemaBoot();
