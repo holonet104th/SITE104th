@@ -415,12 +415,210 @@
                     <iframe src="https://docs.google.com/spreadsheets/d/1Gf97xmsTdAPI-HMrB3UaRW0yd8ECqCHE4TQTtDx_Soo/edit?gid=21598558#gid=21598558" loading="lazy" style="width: 100%; height: 100%; border: none;"></iframe>
                 </div>
             </section>
+            
 
-            <!-- 3. HANGAR -->
-            <section id="vehicles" class="page-section hidden">
-                <h2 class="text-3xl text-white tech-font mb-6">HANGAR TACTIQUE</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="vehicle-grid"></div>
-            </section>
+            <!-- SECTION VÉHICULES (HANGAR TACTIQUE) -->
+
+
+<section id="vehicles" class="page-section pb-20">
+    <!-- HEADER VÉHICULES -->
+    <div class="text-center mb-12">
+        <h2 class="text-4xl text-white tech-font mb-2 tracking-widest" style="text-shadow: 0 0 10px rgba(255,255,255,0.2);">HANGAR TACTIQUE</h2>
+        <div class="flex justify-center items-center gap-4 text-[10px] uppercase tracking-widest text-slate-400 font-mono">
+            <span>Arsenal Motorisé</span>
+            <span class="text-slate-600">|</span>
+            <span class="text-blue-400/60">Unité de Soutien Lourd</span>
+        </div>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <!-- AT-TE -->
+        <div class="holo-panel rounded bg-slate-900/40 border border-slate-700/40 flex flex-col transition hover:bg-slate-900/60 group overflow-hidden">
+            <!-- Cadre Image Horizontal -->
+            <div class="w-full aspect-video bg-black/60 border-b border-slate-700/50 flex items-center justify-center relative overflow-hidden">
+                <span class="text-[10px] text-slate-600 italic text-center px-1">[Image de l'AT-TE]</span>
+                <div class="absolute top-3 right-3 px-2 py-1 bg-slate-800/80 border border-slate-600/50 text-[8px] tech-font text-slate-300">CLASSE: LOURD</div>
+            </div>
+            
+            <!-- Contenu Textuel -->
+            <div class="p-6 flex flex-col flex-grow space-y-4">
+                <div class="border-l-2 border-slate-500 pl-4">
+                    <h4 class="text-white font-bold text-xl tech-font uppercase tracking-tighter group-hover:text-blue-200 transition">AT-TE Walker</h4>
+                    <p class="text-[9px] text-slate-400 font-mono uppercase tracking-widest">Soutien & Percée tactique</p>
+                </div>
+                
+                <div class="text-[11px] text-slate-300 space-y-3 leading-relaxed">
+                    <p>Véhicule de percée sur fronts difficiles grâce à un blindage lourd capable d'encaisser des tirs de gros calibre.</p>
+                    <ul class="space-y-1 text-[10px] font-mono">
+                        <li class="flex items-center gap-2"><span class="text-slate-500">>></span> Ancrage magnétique (parois verticales)</li>
+                        <li class="flex items-center gap-2"><span class="text-slate-500">>></span> Transport : 16 clones + 3 équipages</li>
+                        <li class="flex items-center gap-2"><span class="text-slate-500">>></span> Canon principal : Anti-véhicule & Infanterie</li>
+                    </ul>
+                </div>
+
+                <!-- Stats Bar -->
+                <div class="mt-auto pt-4 grid grid-cols-3 gap-3 border-t border-slate-800/50">
+                    <div class="text-center">
+                        <span class="block text-[8px] text-slate-500 uppercase font-bold">Vitesse</span>
+                        <div class="h-1 bg-slate-800 mt-1 w-full rounded-full overflow-hidden">
+                            <div class="h-full bg-slate-400" style="width: 30%"></div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <span class="block text-[8px] text-slate-500 uppercase font-bold">Puissance</span>
+                        <div class="h-1 bg-slate-800 mt-1 w-full rounded-full overflow-hidden">
+                            <div class="h-full bg-slate-300" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <span class="block text-[8px] text-slate-500 uppercase font-bold">Blindage</span>
+                        <div class="h-1 bg-slate-800 mt-1 w-full rounded-full overflow-hidden">
+                            <div class="h-full bg-slate-100 shadow-[0_0_5px_rgba(255,255,255,0.2)]" style="width: 100%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- TX-225 -->
+        <div class="holo-panel rounded bg-slate-900/40 border border-emerald-800/40 flex flex-col transition hover:bg-slate-900/60 group overflow-hidden">
+            <!-- Cadre Image Horizontal -->
+            <div class="w-full aspect-video bg-black/60 border-b border-emerald-900/30 flex items-center justify-center relative overflow-hidden">
+                <span class="text-[10px] text-slate-600 italic text-center px-1">[Image du TX-225]</span>
+                <div class="absolute top-3 right-3 px-2 py-1 bg-emerald-900/40 border border-emerald-500/30 text-[8px] tech-font text-emerald-400">CLASSE: SOUTIEN</div>
+            </div>
+            
+            <div class="p-6 flex flex-col flex-grow space-y-4">
+                <div class="border-l-2 border-emerald-600 pl-4">
+                    <h4 class="text-white font-bold text-xl tech-font uppercase tracking-tighter group-hover:text-emerald-300 transition">Char TX-225</h4>
+                    <p class="text-[9px] text-emerald-500/80 font-mono uppercase tracking-widest">Logistique & Appui guerre</p>
+                </div>
+                
+                <div class="text-[11px] text-slate-300 space-y-3 leading-relaxed">
+                    <p>Principalement utilisé pour les missions humanitaires, le transport de fret massif et le dépannage de véhicules légers.</p>
+                    <ul class="space-y-1 text-[10px] font-mono">
+                        <li class="flex items-center gap-2"><span class="text-emerald-500/60">>></span> Grues d'attache pour objets massifs</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-500/60">>></span> Capacité de stockage modulable</li>
+                        <li class="flex items-center gap-2"><span class="text-emerald-500/60">>></span> Armement Piloté & Co-Piloté</li>
+                    </ul>
+                </div>
+
+                <div class="mt-auto pt-4 grid grid-cols-3 gap-3 border-t border-slate-800/50">
+                    <div class="text-center">
+                        <span class="block text-[8px] text-emerald-700 uppercase font-bold">Vitesse</span>
+                        <div class="h-1 bg-slate-800 mt-1 w-full rounded-full overflow-hidden">
+                            <div class="h-full bg-emerald-500/70" style="width: 50%"></div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <span class="block text-[8px] text-emerald-700 uppercase font-bold">Puissance</span>
+                        <div class="h-1 bg-slate-800 mt-1 w-full rounded-full overflow-hidden">
+                            <div class="h-full bg-emerald-500/70" style="width: 60%"></div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <span class="block text-[8px] text-emerald-700 uppercase font-bold">Blindage</span>
+                        <div class="h-1 bg-slate-800 mt-1 w-full rounded-full overflow-hidden">
+                            <div class="h-full bg-emerald-500/70" style="width: 70%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AT-RT -->
+        <div class="holo-panel rounded bg-slate-900/40 border border-sky-800/40 flex flex-col transition hover:bg-slate-900/60 group overflow-hidden">
+            <!-- Cadre Image Horizontal -->
+            <div class="w-full aspect-video bg-black/60 border-b border-sky-900/30 flex items-center justify-center relative overflow-hidden">
+                <span class="text-[10px] text-slate-600 italic text-center px-1">[Image de l'AT-RT]</span>
+                <div class="absolute top-3 right-3 px-2 py-1 bg-sky-900/40 border border-sky-500/30 text-[8px] tech-font text-sky-400">CLASSE: RECON</div>
+            </div>
+            
+            <div class="p-6 flex flex-col flex-grow space-y-4">
+                <div class="border-l-2 border-sky-600 pl-4">
+                    <h4 class="text-white font-bold text-xl tech-font uppercase tracking-tighter group-hover:text-sky-300 transition">AT-RT Scout</h4>
+                    <p class="text-[9px] text-sky-500/80 font-mono uppercase tracking-widest">Reconnaissance rapide</p>
+                </div>
+                
+                <div class="text-[11px] text-slate-300 space-y-3 leading-relaxed">
+                    <p>Unité agile pour l'appui au sol et la reconnaissance. Capable de franchir des obstacles majeurs en un bond.</p>
+                    <ul class="space-y-1 text-[10px] font-mono">
+                        <li class="flex items-center gap-2"><span class="text-sky-500/60">>></span> Griffes métalliques d'ancrage vertical</li>
+                        <li class="flex items-center gap-2"><span class="text-sky-500/60">>></span> Bonds : 10m (Haut) / 15m (Long)</li>
+                        <li class="text-amber-500 font-bold italic text-[10px]">REQUIS: Formation BLW obligatoire</li>
+                    </ul>
+                </div>
+
+                <div class="mt-auto pt-4 grid grid-cols-3 gap-3 border-t border-slate-800/50">
+                    <div class="text-center">
+                        <span class="block text-[8px] text-sky-700 uppercase font-bold">Vitesse</span>
+                        <div class="h-1 bg-slate-800 mt-1 w-full rounded-full overflow-hidden">
+                            <div class="h-full bg-sky-500/70" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <span class="block text-[8px] text-sky-700 uppercase font-bold">Puissance</span>
+                        <div class="h-1 bg-slate-800 mt-1 w-full rounded-full overflow-hidden">
+                            <div class="h-full bg-sky-500/70" style="width: 40%"></div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <span class="block text-[8px] text-sky-700 uppercase font-bold">Blindage</span>
+                        <div class="h-1 bg-slate-800 mt-1 w-full rounded-full overflow-hidden">
+                            <div class="h-full bg-sky-500/70" style="width: 30%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- AV-7 -->
+        <div class="holo-panel rounded bg-slate-900/40 border border-red-800/40 flex flex-col transition hover:bg-slate-900/60 group overflow-hidden">
+            <!-- Cadre Image Horizontal -->
+            <div class="w-full aspect-video bg-black/60 border-b border-red-900/30 flex items-center justify-center relative overflow-hidden">
+                <span class="text-[10px] text-slate-600 italic text-center px-1">[Image de l'AV-7]</span>
+                <div class="absolute top-3 right-3 px-2 py-1 bg-red-900/40 border border-red-500/30 text-[8px] tech-font text-red-400">CLASSE: ARTILLERIE</div>
+            </div>
+            
+            <div class="p-6 flex flex-col flex-grow space-y-4">
+                <div class="border-l-2 border-red-600 pl-4">
+                    <h4 class="text-white font-bold text-xl tech-font uppercase tracking-tighter group-hover:text-red-300 transition">Canon Lourd AV-7</h4>
+                    <p class="text-[9px] text-red-500/80 font-mono uppercase tracking-widest">Artillerie Auto-propulsée</p>
+                </div>
+                
+                <div class="text-[11px] text-slate-300 space-y-3 leading-relaxed">
+                    <p>Soutien de troisième ligne. Indispensable lors de sièges ou de lignes de feu complexes.</p>
+                    <ul class="space-y-1 text-[10px] font-mono">
+                        <li class="flex items-center gap-2"><span class="text-red-500/60">>></span> Canonnier unique requis</li>
+                        <li class="flex items-center gap-2"><span class="text-red-500/60">>></span> Tir en cloche hautement explosif</li>
+                        <li class="flex items-center gap-2"><span class="text-red-500/60">>></span> Efficacité maximale contre structures</li>
+                    </ul>
+                </div>
+
+                <div class="mt-auto pt-4 grid grid-cols-3 gap-3 border-t border-slate-800/50">
+                    <div class="text-center">
+                        <span class="block text-[8px] text-red-700 uppercase font-bold">Vitesse</span>
+                        <div class="h-1 bg-slate-800 mt-1 w-full rounded-full overflow-hidden">
+                            <div class="h-full bg-red-500/70" style="width: 10%"></div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <span class="block text-[8px] text-red-700 uppercase font-bold">Puissance</span>
+                        <div class="h-1 bg-slate-800 mt-1 w-full rounded-full overflow-hidden">
+                            <div class="h-full bg-red-500/70" style="width: 100%"></div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <span class="block text-[8px] text-red-700 uppercase font-bold">Blindage</span>
+                        <div class="h-1 bg-slate-800 mt-1 w-full rounded-full overflow-hidden">
+                            <div class="h-full bg-red-500/70" style="width: 40%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
             <!-- 4. LOGISTIQUE -->
             <section id="stock" class="page-section hidden">
@@ -438,14 +636,213 @@
                 <h2 class="text-3xl text-white tech-font mb-2">CENTRE D'INSTRUCTION</h2>
                 <p class="text-gray-500 mb-8">Sélectionnez un module pour ouvrir le dossier complet.</p>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6" id="formation-grid"></div>
-            </section>
+            </section
+            >
 
             <!-- 6. SPÉCIALISATIONS -->
-            <section id="spes" class="page-section hidden">
-                <h2 class="text-3xl text-white tech-font mb-8">SPÉCIALISATIONS</h2>
-                <div class="grid md:grid-cols-3 xl:grid-cols-5 gap-6" id="specs-grid"></div>
-            </section>
 
+
+ <section id="spes" class="page-section pb-20">
+    <!-- HEADER -->
+    <div class="text-center mb-16">
+        <h2 class="text-4xl text-white tech-font mb-2 tracking-[0.2em]" style="text-shadow: 0 0 15px rgba(124, 144, 177, 0.3);">SPÉCIALISATIONS</h2>
+        <div class="flex justify-center items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-slate-500 font-mono">
+            <span>Ordre de bataille</span>
+            <span class="text-slate-700">|</span>
+            <span class="text-blue-400/50">104th Battalion Special Ops</span>
+        </div>
+    </div>
+
+    <!-- GRID DES SPÉCIALITÉS -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-16 gap-x-8 px-4">
+        
+        <!-- WOLFPACK -->
+        <div class="holo-panel rounded-lg pt-12 pb-6 px-6 relative flex flex-col items-center transition-all duration-500 hover:translate-y-[-5px]">
+            <!-- Logo Circulaire -->
+            <div class="absolute -top-10 w-20 h-20 rounded-full bg-slate-900 border-2 border-slate-700 flex items-center justify-center overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.5)] group-hover:border-blue-500/50 transition-colors">
+                <span class="text-[8px] text-slate-600 italic text-center">[Logo Wolfpack]</span>
+                <div class="absolute inset-0 bg-blue-500/5"></div>
+            </div>
+            
+            <div class="text-center mb-4">
+                <h4 class="text-white font-bold text-xl tech-font tracking-wider">Wolfpack</h4>
+                <p class="text-[10px] text-slate-400/50 font-mono italic tracking-widest mt-1">"Loyauté, Fraternité, Puissance !"</p>
+            </div>
+
+            <div class="w-full space-y-4 flex-grow">
+                <p class="text-[11px] text-slate-400 text-center leading-relaxed italic">
+                    Unité élite pour les situations de reconnaissance et de haute intensité.
+                </p>
+                <div class="grid border-t border-slate-800/50 pt-4">
+                    <div class="text-center border-r border-slate-800/50">
+                        <span class="block text-[10px] text-slate-500 uppercase">Rôle Principal</span>
+                        <span class="text-[10px] text-slate-300 font-bold uppercase">Reconnaissance</span>
+                    </div>
+                </div>
+                <ul class="text-[10px] space-y-1 font-mono text-slate-500 mb-4">
+                    <li class="flex items-center gap-2"><span class="text-blue-500/50">●</span> Opérateurs mobile autonomes</li>
+                    <li class="flex items-center gap-2"><span class="text-blue-500/50">●</span> Protection rapprochée du CMDM</li>
+                </ul>
+                <a href="https://holonet104th.github.io/SITEWPK104th/" class="external-link-btn !mb-0 py-2 !text-[9px]">Consulter l'Holonet Wolfpack</a>
+            </div>
+        </div>
+
+        <!-- DRYAX -->
+        <div class="holo-panel rounded-lg pt-12 pb-6 px-6 relative flex flex-col items-center transition-all duration-500 hover:translate-y-[-5px]">
+            <!-- Logo Circulaire -->
+            <div class="absolute -top-10 w-20 h-20 rounded-full bg-slate-900 border-2 border-red-900/40 flex items-center justify-center overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.5)] group-hover:border-red-500/50 transition-colors">
+                <span class="text-[8px] text-slate-600 italic text-center">[Logo Dryax]</span>
+                <div class="absolute inset-0 bg-red-500/5"></div>
+            </div>
+            
+            <div class="text-center mb-4">
+                <h4 class="text-white font-bold text-xl tech-font tracking-wider">Dryax</h4>
+                <p class="text-[10px] text-red-500/80 font-mono italic tracking-widest mt-1">"Tenir quand tout cède !"</p>
+            </div>
+
+            <div class="w-full space-y-4 flex-grow">
+                <p class="text-[11px] text-slate-400 text-center leading-relaxed italic">
+                    Médecin du 104th. Un rôle de soutien pour la meute sur le champ de bataille.
+                </p>
+                <div class="grid border-t border-slate-800/50 pt-4">
+                    <div class="text-center border-r border-slate-800/50">
+                        <span class="block text-[10px] text-red-900 uppercase">Rôle Principal</span>
+                        <span class="text-[10px] text-slate-300 font-bold uppercase">Soutien</span>
+                    </div>
+                </div>
+                <ul class="text-[10px] space-y-1 font-mono text-slate-500 mb-4">
+                    <li class="flex items-center gap-2"><span class="text-red-500/50">●</span> Soins médicaux avancés</li>
+                    <li class="flex items-center gap-2"><span class="text-red-500/50">●</span> Unité de seconde ligne</li>
+                </ul>
+                <a href="XXX" class="external-link-btn !mb-0 py-2 !text-[9px] !border-red-900/50 !text-red-500 hover:!bg-red-500/10">Consulter l'Holonet Dryax</a>
+            </div>
+        </div>
+
+        <!-- BLACKWOLF -->
+        <div class="holo-panel rounded-lg pt-12 pb-6 px-6 relative flex flex-col items-center transition-all duration-500 hover:translate-y-[-5px]">
+            <!-- Logo Circulaire -->
+            <div class="absolute -top-10 w-20 h-20 rounded-full bg-slate-900 border-2 border-zinc-700 flex items-center justify-center overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+                <span class="text-[8px] text-slate-600 italic text-center">[Logo Blackwolf]</span>
+                <div class="absolute inset-0 bg-white/5"></div>
+            </div>
+            
+            <div class="text-center mb-4">
+                <h4 class="text-white font-bold text-xl tech-font tracking-wider">Black-Wolf</h4>
+                <p class="text-[10px] text-zinc-500 font-mono italic tracking-widest mt-1">"L'AT-TE fang les rangs, La meutes frappe en hurlant !"</p>
+            </div>
+
+            <div class="w-full space-y-4 flex-grow">
+                <p class="text-[11px] text-slate-400 text-center leading-relaxed italic">
+                    Pilote du 104th. Spécialistes de l'appui-feu lourd et du désamorçage.
+                </p>
+                <div class="grid border-t border-slate-800/50 pt-4">
+                    <div class="text-center border-r border-slate-800/50">
+                        <span class="block text-[10px] text-zinc-600 uppercase">Rôle Principal</span>
+                        <span class="text-[10px] text-slate-300 font-bold uppercase">Appui-feu</span>
+                    </div>
+                </div>
+                <ul class="text-[10px] space-y-1 font-mono text-slate-500 mb-4">
+                    <li class="flex items-center gap-2"><span class="text-zinc-500">●</span> Désamorçage de bombe</li>
+                    <li class="flex items-center gap-2"><span class="text-zinc-500">●</span> Equipement lourd</li>
+                </ul>
+                <a href="XXX" class="external-link-btn !mb-0 py-2 !text-[9px] !border-zinc-700 !text-zinc-400 hover:!bg-white/5">Consulter l'Holonet Black-Wolf</a>
+            </div>
+        </div>
+
+        <!-- BLAZE -->
+        <div class="holo-panel rounded-lg pt-12 pb-6 px-6 relative flex flex-col items-center transition-all duration-500 hover:translate-y-[-5px]">
+            <!-- Logo Circulaire -->
+            <div class="absolute -top-10 w-20 h-20 rounded-full bg-slate-900 border-2 border-amber-900/40 flex items-center justify-center overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.5)] group-hover:border-amber-500/50 transition-colors">
+                <span class="text-[8px] text-slate-600 italic text-center">[Logo Blaze]</span>
+                <div class="absolute inset-0 bg-amber-500/5"></div>
+            </div>
+            
+            <div class="text-center mb-4">
+                <h4 class="text-white font-bold text-xl tech-font tracking-wider">Blaze trooper</h4>
+                <p class="text-[10px] text-amber-500/80 font-mono italic tracking-widest mt-1">"L'honneur notre bouclier, la guerre notre destinée !"</p>
+            </div>
+
+            <div class="w-full space-y-4 flex-grow">
+                <p class="text-[11px] text-slate-400 text-center leading-relaxed italic">
+                    Soutien thermique lourd. Experts en délogement de positions fortifiées.
+                </p>
+                <div class="grid border-t border-slate-800/50 pt-4">
+                    <div class="text-center border-r border-slate-800/50">
+                        <span class="block text-[10px] text-amber-900 uppercase">Rôle Principal</span>
+                        <span class="text-[10px] text-slate-300 font-bold uppercase">Combat rapproché</span>
+                    </div>
+                </div>
+                <ul class="text-[10px] space-y-1 font-mono text-slate-500 mb-4">
+                    <li class="flex items-center gap-2"><span class="text-amber-500/50">●</span> Protection des convois / VIP</li>
+                    <li class="flex items-center gap-2"><span class="text-amber-500/50">●</span> Soutien pyrotechnique</li>
+                </ul>
+                <a href="XXX" class="external-link-btn !mb-0 py-2 !text-[9px] !border-amber-900/50 !text-amber-500 hover:!bg-amber-500/10">Consulter l'Holonet Blaze trooper</a>
+            </div>
+        </div>
+
+        <!-- ARC ROGUE -->
+        <div class="holo-panel rounded-lg pt-12 pb-6 px-6 relative flex flex-col items-center transition-all duration-500 hover:translate-y-[-5px]">
+            <!-- Logo Circulaire -->
+            <div class="absolute -top-10 w-20 h-20 rounded-full bg-slate-900 border-2 border-sky-900/40 flex items-center justify-center overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.5)] group-hover:border-sky-500/50 transition-colors">
+                <span class="text-[8px] text-slate-600 italic text-center">[Logo ARC Rogue]</span>
+                <div class="absolute inset-0 bg-sky-500/5"></div>
+            </div>
+            
+            <div class="text-center mb-4">
+                <h4 class="text-white font-bold text-xl tech-font tracking-wider">ARC Rogue</h4>
+                <p class="text-[10px] text-sky-500/80 font-mono italic tracking-widest mt-1">"L'élite de la république !"</p>
+            </div>
+
+            <div class="w-full space-y-4 flex-grow">
+                <p class="text-[11px] text-slate-400 text-center leading-relaxed italic">
+                    Opérateurs autonomes. Missions de reconnaissance avancée en territoire hostile.
+                </p>
+                <div class="grid border-t border-slate-800/50 pt-4">
+                    <div class="text-center border-r border-slate-800/50">
+                        <span class="block text-[10px] text-sky-900 uppercase">Rôle Principal</span>
+                        <span class="text-[10px] text-slate-300 font-bold uppercase">Recon Avancée</span>
+                    </div>
+                </div>
+                <ul class="text-[10px] space-y-1 font-mono text-slate-500 mb-4">
+                    <li class="flex items-center gap-2"><span class="text-sky-500/50">●</span> Précision longue distance</li>
+                    <li class="flex items-center gap-2"><span class="text-sky-500/50">●</span> Soldat Polyvalent</li>
+                </ul>
+                <a href="XXX" class="external-link-btn !mb-0 py-2 !text-[9px] !border-sky-900/50 !text-sky-400 hover:!bg-sky-500/10">Consulter l'Holonet Arc troopers</a>
+            </div>
+        </div>
+
+        <!-- RC RÉGIMENTAIRE -->
+        <div class="holo-panel rounded-lg pt-12 pb-6 px-6 relative flex flex-col items-center transition-all duration-500 hover:translate-y-[-5px]">
+            <!-- Logo Circulaire -->
+            <div class="absolute -top-10 w-20 h-20 rounded-full bg-slate-900 border-2 border-fuchsia-900/40 flex items-center justify-center overflow-hidden shadow-[0_0_20px_rgba(0,0,0,0.5)] group-hover:border-fuchsia-500/50 transition-colors">
+                <span class="text-[8px] text-slate-600 italic text-center">[Logo RC]</span>
+                <div class="absolute inset-0 bg-fuchsia-500/5"></div>
+            </div>
+            
+            <div class="text-center mb-4">
+                <h4 class="text-white font-bold text-xl tech-font tracking-wider">RC Régimentaire</h4>
+                <p class="text-[10px] text-fuchsia-500/80 font-mono italic tracking-widest mt-1">"XXX"</p>
+            </div>
+
+            <div class="w-full space-y-4 flex-grow">
+                <p class="text-[11px] text-slate-400 text-center leading-relaxed italic">
+                    Opérateur autonome. Missions de soutien avancée en territoire hostile.
+                </p>
+                <div class="grid border-t border-slate-800/50 pt-4">
+                    <div class="text-center border-r border-slate-800/50">
+                        <span class="block text-[10px] text-fuchsia-900 uppercase">Rôle Principal</span>
+                        <span class="text-[10px] text-slate-300 font-bold uppercase">Soutien Offensif</span>
+                    </div>
+                </div>
+                <ul class="text-[10px] space-y-1 font-mono text-slate-500 mb-4">
+                    <li class="flex items-center gap-2"><span class="text-fuchsia-500/50">●</span> Equipement lourd</li>
+                    <li class="flex items-center gap-2"><span class="text-fuchsia-500/50">●</span> Soldat Polyvalent</li>
+                </ul>
+                <a href="XXX" class="external-link-btn !mb-0 py-2 !text-[9px] !border-fuchsia-900/50 !text-fuchsia-500 hover:!bg-fuchsia-500/10">Consulter l'Holonet RC régimentaire</a>
+            </div>
+        </div>
+    </div>
+</section>
             <!-- 7. RECRUTEMENT -->
             <section id="recrutement" class="page-section hidden">
                 <h2 class="text-3xl text-white tech-font mb-6 text-center">BUREAU DE RECRUTEMENT</h2>
