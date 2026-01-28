@@ -214,6 +214,21 @@
         .rp-doc strong { color: var(--wolf-blue); }
         .highlight { background: rgba(255, 0, 0, 0.1); border-left: 2px solid red; padding: 1rem; color: #fc8181; }
 
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0f172a; /* slate-900 */
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #334155; /* slate-700 */
+            border-radius: 4px;
+            border: 2px solid #0f172a;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background-color: #475569; /* slate-600 */
+        }
+
     </style>
 </head>
 <body class="flex flex-col">
@@ -745,51 +760,64 @@
 
 
             <!-- 5. FORMATIONS -->
-
-            <!-- Header -->
-<section id="formations" class="page-section visible pb-20">
-    <div class="text-center mb-12">
-        <h2 class="text-4xl text-white tech-font mb-2 tracking-[0.2em]" style="text-shadow: 0 0 15px rgba(124, 144, 177, 0.3);">CENTRE D'INSTRUCTION</h2>
-        <div class="flex justify-center items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-slate-500 font-mono">
-            <span>Base de données tactique</span>
-            <span class="text-slate-700">|</span>
-            <span class="text-blue-400/50">Protocoles de Qualification</span>
-        </div>
-    </div>
-
-        <!-- GRID DES FORMATIONS -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="formation-grid">
-        </div>
-
-    <!-- MODAL DE FORMATION (ptet bug actuel car pas assez de formation)-->
-    <div id="formation-modal" class="fixed inset-0 z-[10000] hidden bg-slate-950/95 backdrop-blur-xl animate-in fade-in duration-300 overflow-y-auto">
-        <div class="min-h-screen w-full flex flex-col relative">
-            <div class="flex-none flex items-center justify-between p-6 border-b border-blue-900/30 bg-slate-900/50 sticky top-0 z-10">
-            <div class="flex items-center gap-4">
-                    <div id="modal-icon-container" class="p-3 bg-blue-500/10 rounded border border-blue-500/20">
-                        <!-- TITLE -->
-                        <div class="w-6 h-6 bg-blue-400 rounded-full"></div>
-                    </div>
-                    <!-- Icon / Category Placeholder -->
-                    <div>
-                        <h3 id="modal-title" class="text-2xl text-white tech-font tracking-wider uppercase">TITRE DU DOSSIER</h3>
-                        <p id="modal-category" class="text-[10px] text-blue-400 font-mono tracking-[0.3em]">CLASSIFIÉ</p>
+            <section id="formations" class="page-section visible pb-20">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl text-white tech-font mb-2 tracking-[0.2em]" style="text-shadow: 0 0 15px rgba(124, 144, 177, 0.3);">CENTRE D'INSTRUCTION</h2>
+                    <div class="flex justify-center items-center gap-4 text-[10px] uppercase tracking-[0.3em] text-slate-500 font-mono">
+                        <span>Base de données tactique</span>
+                        <span class="text-slate-700">|</span>
+                        <span class="text-blue-400/50">Protocoles de Qualification</span>
                     </div>
                 </div>
-                <!-- Close Button -->
-                <button onclick="closeFormationModal()" class="cursor-pointer p-3 hover:bg-red-500/10 text-slate-400 hover:text-red-500 transition rounded-full border border-slate-800">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-                </button>
-            </div>
 
-            <!-- Modals Content -->
-            <div class="flex-grow p-8 md:p-12 lg:px-24">
-                <div id="modal-content" class="max-w-4xl mx-auto text-slate-300 space-y-12 leading-relaxed">
+                <!-- CONTENEUR PRINCIPAL FORMATIONS -->
+                <div id="formations-module" class="w-full max-w-7xl mx-auto p-4">
+                    
+                    <!-- GRILLE DES CARTES -->
+                    <div id="formations-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Les cartes seront générées ici par le JS -->
+                    </div>
+
+                    <!-- MODALE D'AFFICHAGE DU CONTENU -->
+                    <!-- IDs RENOMMÉS POUR ÉVITER LES CONFLITS CSS GLOBAUX -->
+                    <div id="formation-modal" class="fixed inset-0 z-[9999] hidden font-sans" aria-hidden="true">
+                        
+                        <!-- Fond sombre fixe -->
+                        <div class="fixed inset-0 bg-black/90 backdrop-blur-sm transition-opacity" id="fmt-modal-backdrop"></div>
+
+                        <!-- Conteneur de scroll GLOBAL -->
+                        <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+                            <div class="flex min-h-full items-center justify-center p-4 text-center sm:p-0">
+                                
+                                <!-- La BOITE Modale -->
+                                <div class="relative transform overflow-hidden rounded-lg bg-slate-900 border border-slate-700 text-left shadow-2xl transition-all sm:my-8 w-full max-w-5xl">
+                                    
+                                    <!-- En-tête -->
+                                    <div class="bg-slate-900 border-b border-slate-700/50 p-6 flex justify-between items-center">
+                                        <h2 id="fmt-modal-title" class="text-2xl font-bold text-white tracking-wide tech-font">TITRE</h2>
+                                        <button id="fmt-close-btn" class="text-slate-400 hover:text-red-400 transition-colors p-2 rounded hover:bg-white/5">
+                                            <i data-lucide="x" class="w-8 h-8"></i>
+                                        </button>
+                                    </div>
+
+                                    <!-- Corps du contenu : CORRECTION ID pour éviter le CSS global #modal-content -->
+                                    <div id="fmt-modal-content" class="p-6 text-slate-300 bg-slate-900">
+                                        <!-- Le contenu s'affichera ici librement -->
+                                    </div>
+                                    
+                                    <!-- Pied de page -->
+                                    <div class="bg-slate-900 border-t border-slate-700/50 p-4 text-right">
+                                        <button id="fmt-close-bottom" class="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-white rounded border border-slate-600 transition-all text-sm uppercase tracking-wider shadow-lg hover:shadow-blue-900/20">
+                                            Fermer le dossier
+                                        </button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</section>
+            </section>
 
 
 
@@ -1958,6 +1986,7 @@
     <!-- SCRIPTS -->
 
 <script>
+    (function() {
     /**
      * STRUCTURE DE DONNÉES DES FORMATIONS
      */
@@ -5119,82 +5148,111 @@
     </section>
 </div>
         `
-    },
-    // ... Garder le reste des formations (AT-TE, TX225, etc.) à l'identique
-};
+    },};
+    
+        // 2. LOGIQUE D'AFFICHAGE
+        const gridContainer = document.getElementById('formations-grid');
+        const modal = document.getElementById('formation-modal');
+        // IDs RENOMMÉS ICI
+        const modalTitle = document.getElementById('fmt-modal-title');
+        const modalContent = document.getElementById('fmt-modal-content');
+        const closeBtns = [
+            document.getElementById('fmt-close-btn'),
+            document.getElementById('fmt-close-bottom'),
+            document.getElementById('fmt-modal-backdrop')
+        ];
 
-// Fonctions de rendu identiques à votre code initial
-function renderFormations() {
-    const grid = document.getElementById('formation-grid');
-    if (!grid) return;
+        // DÉPLACEMENT DE LA MODALE DANS LE BODY
+        // Cela évite les problèmes de z-index et d'overflow si le module est placé dans un conteneur relatif
+        if (modal && document.body) {
+            document.body.appendChild(modal);
+        }
 
-    grid.innerHTML = Object.entries(formationsData).map(([title, data]) => `
-        <div class="holo-panel p-6 cursor-pointer group hover:bg-blue-900/10 transition-all duration-300 relative overflow-hidden" 
-             onclick="openFormationModal('${title}')">
-            <div class="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
-                <i data-lucide="${data.icon}" class="w-24 h-24"></i>
-            </div>
-            <div class="relative z-10 flex flex-col h-full">
-                <div class="flex items-start justify-between mb-4">
-                    <div class="p-2 bg-slate-800 rounded text-blue-400 group-hover:text-blue-300 transition-colors">
-                        <i data-lucide="${data.icon}" class="w-6 h-6"></i>
+        // Générer les cartes
+        if (gridContainer) {
+            Object.keys(formationsData).forEach(key => {
+                const data = formationsData[key];
+                
+                // Création de l'élément carte
+                const card = document.createElement('div');
+                card.className = "bg-slate-800/50 border border-slate-700 hover:border-blue-500/50 hover:bg-slate-800 transition-all duration-300 rounded-lg p-6 cursor-pointer group flex flex-col gap-4 relative overflow-hidden";
+                
+                // HTML de la carte
+                card.innerHTML = `
+                    <div class="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 transition-opacity">
+                        <i data-lucide="${data.icon}" class="w-24 h-24 text-blue-500 transform rotate-12"></i>
                     </div>
-                    <span class="text-[8px] font-mono text-slate-600 uppercase tracking-widest">${data.category}</span>
-                </div>
-                <h3 class="text-white font-bold text-lg mb-2 group-hover:text-blue-200 transition-colors uppercase tracking-tight">${title}</h3>
-                <p class="text-xs text-slate-500 leading-tight flex-grow">${data.summary}</p>
-                <div class="mt-6 flex items-center justify-between text-[9px] tech-font text-slate-600 border-t border-slate-800 pt-4">
-                    <span class="group-hover:text-blue-400 transition-colors">OUVRIR DOSSIER</span>
-                    <i data-lucide="chevron-right" class="w-3 h-3 group-hover:translate-x-1 transition-transform"></i>
-                </div>
-            </div>
-        </div>
-    `).join('');
-    if (typeof lucide !== 'undefined') lucide.createIcons();
-}
+                    
+                    <div class="flex items-center gap-3">
+                        <div class="p-3 bg-slate-900 rounded-lg border border-slate-700 text-blue-400 group-hover:text-blue-300 group-hover:border-blue-500/30 transition-colors shadow-lg">
+                            <i data-lucide="${data.icon}" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <span class="text-xs font-bold text-blue-500 tracking-wider uppercase">${data.category}</span>
+                            <h3 class="text-white font-bold text-lg leading-tight group-hover:text-blue-100">${key}</h3>
+                        </div>
+                    </div>
+                    
+                    <div class="relative z-10">
+                        <p class="text-slate-400 text-sm line-clamp-2">${data.summary}</p>
+                    </div>
+                    
+                    <div class="mt-auto pt-4 border-t border-slate-700/50 flex items-center justify-between text-xs text-slate-500 group-hover:text-blue-400 transition-colors">
+                        <span>Accéder au dossier</span>
+                        <i data-lucide="arrow-right" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"></i>
+                    </div>
+                `;
 
-function openFormationModal(title) {
-    const data = formationsData[title];
-    if (!data) return;
-    const modal = document.getElementById('formation-modal');
-    document.getElementById('modal-title').innerText = title;
-    document.getElementById('modal-category').innerText = data.category;
-    document.getElementById('modal-content').innerHTML = data.content;
-    document.getElementById('modal-icon-container').innerHTML = `<i data-lucide="${data.icon}" class="w-8 h-8 text-blue-400"></i>`;
-    modal.classList.remove('hidden');
-    modal.classList.add('flex');
-    document.body.style.overflow = 'hidden'; 
-    if (typeof lucide !== 'undefined') lucide.createIcons();
-}
+                // Ajout de l'événement clic
+                card.addEventListener('click', () => openModal(key));
+                gridContainer.appendChild(card);
+            });
+        }
 
-function closeFormationModal() {
-    const modal = document.getElementById('formation-modal');
-    modal.classList.add('hidden');
-    modal.classList.remove('flex');
-    document.body.style.overflow = '';
-}
+        // 3. GESTION DE LA MODALE
+        function openModal(key) {
+            const data = formationsData[key];
+            if(!data) return;
 
+            // Remplir la modale
+            if (modalTitle) modalTitle.textContent = key.toUpperCase();
+            if (modalContent) modalContent.innerHTML = data.content;
 
+            // Afficher la modale
+            if (modal) modal.classList.remove('hidden');
 
+            // Rafraîchir les icônes Lucide (important car nouveau contenu injecté)
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        }
 
+        function closeModal() {
+            if (modal) modal.classList.add('hidden');
+            if (modalContent) modalContent.innerHTML = ''; // Nettoyer pour économiser la mémoire
+        }
 
+        // Listeners fermeture
+        closeBtns.forEach(btn => {
+            if (btn) {
+                btn.addEventListener('click', closeModal);
+            }
+        });
 
+        // Fermeture avec la touche Echap
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+                closeModal();
+            }
+        });
 
+        // Initialisation des icônes au chargement de la page
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    })();
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-        // --- DATA ---
+        // --- DATA (Pour les autres modales globales, hors formations) ---
         const vehiclesData = [
             { id: "atte", name: "AT-TE Walker", img: "./img/atte.jpg", type: "LOURD", desc: "Véhicule de soutien et de percée. Blindage lourd, s'attache aux montagnes. Capacité: 16 clones.", stats: {speed: 30, power: 90, armor: 100} },
             { id: "tx225", name: "Char TX-225", img: "./img/tx225.jpg", type: "SOUTIEN", desc: "Véhicule de soutien (missions humanitaires). Armé.", stats: {speed: 50, power: 60, armor: 70} },
@@ -5302,8 +5360,7 @@ function closeFormationModal() {
         function closeModal() { document.getElementById('modal-overlay').style.display = 'none'; }
 
         // INIT
-        window.addEventListener('load', () => {;
-            renderFormations();
+        window.addEventListener('load', () => {
             fillDataStream();
             lucide.createIcons();
             runCinemaBoot();
