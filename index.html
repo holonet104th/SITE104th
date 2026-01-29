@@ -1989,6 +1989,13 @@
     (function() {
     /**
      * STRUCTURE DE DONNÉES DES FORMATIONS
+     A corriger formation :
+     CMD DE MISSION
+     TX225
+     TEMRINAL(corriger petit phrase lors du hack)
+     SDM ( Revoire les explications )
+     MANQUE DATA CENTER
+     Armurerie (Logo)
      */
     const formationsData = {
     "CMD de mission": {
@@ -1997,45 +2004,69 @@
         summary: "Gestion d'escouade et coordination stratégique de terrain.",
         content: `
             <div class="space-y-12">
+                    <!-- Section Introduction / Objectifs -->
                 <div>
                     <h3 class="text-xl text-blue-400 tech-font border-b border-blue-900/30 pb-2 mb-6 flex items-center gap-2">
-                        <i data-lucide="users" class="w-5 h-5"></i> I. COMPOSITION DE LA MEUTE
+                        <i data-lucide="clipboard-list" class="w-5 h-5"></i> I. OBJECTIFS DE LA FORMATION
+                    </h3>
+                    
+                    <div class="bg-blue-900/10 p-4 rounded border border-blue-500/20 text-center">
+                        <strong class="text-blue-400 text-sm uppercase">Directive Instructeur :</strong>
+                        <p class="text-slate-300 text-sm mt-2 leading-relaxed">
+                            L’unité doit être capable de commander une mission, de savoir attribuer les postes en fonction des spécialisations, et d’avoir un raisonnement logique et militaire.
+                        </p>
+                    </div>
+                </div>
+                    <h3 class="text-xl text-blue-400 tech-font border-b border-blue-900/30 pb-2 mb-6 flex items-center gap-2">
+                        <i data-lucide="users" class="w-5 h-5"></i> II. COMPOSITION DE LA MEUTE
                     </h3>
                     <div class="grid gap-6 md:grid-cols-2">
                         <div class="bg-slate-900/40 p-4 rounded border border-slate-700/50 flex gap-4">
                             <div class="w-16 h-16 bg-black/50 rounded-full border border-slate-600 flex items-center justify-center flex-shrink-0 text-[8px] text-slate-500 italic">[Logo WP]</div>
                             <div>
                                 <h4 class="text-white font-bold tech-font text-lg">WOLFPACK</h4>
-                                <p class="text-sm text-slate-300 leading-relaxed">Unités terrestres et aériennes (jetpacks). Reconnaissance, tir longue distance.</p>
+                                <p class="text-sm text-slate-300 leading-relaxed"> • Unités de reconnaissance, tir longue distance.</p>
+                                <p class="text-sm text-slate-300 leading-relaxed"> • Terrestres et aériennes (jetpacks). Grâce à leur polyvalence, elles peuvent être envoyées en avant-garde ou en première ligne classique.</p>
                             </div>
                         </div>
                         <div class="bg-slate-900/40 p-4 rounded border border-slate-700/50 flex gap-4">
                              <div class="w-16 h-16 bg-black/50 rounded-full border border-slate-600 flex items-center justify-center flex-shrink-0 text-[8px] text-slate-500 italic">[Logo BW]</div>
                             <div>
                                 <h4 class="text-white font-bold tech-font text-lg">BLACK WOLVES</h4>
-                                <p class="text-sm text-slate-300 leading-relaxed">Unités lourdes (pilotes, heavy gunners). Soutien feu important.</p>
+                                <p class="text-sm text-slate-300 leading-relaxed"> • Unités d'Appui-feu (pilotes, heavy gunners).</p>
+                                <p class="text-sm text-slate-300 leading-relaxed"> • Terrestres et pilotes. Leur rôle est de percer et de tenir la première ligne grâce à leur puissance de feu.</p>
                             </div>
                         </div>
                         <div class="bg-slate-900/40 p-4 rounded border border-slate-700/50 flex gap-4">
                              <div class="w-16 h-16 bg-black/50 rounded-full border border-slate-600 flex items-center justify-center flex-shrink-0 text-[8px] text-slate-500 italic">[Logo Blaze]</div>
                             <div>
                                 <h4 class="text-white font-bold tech-font text-lg">BLAZE</h4>
-                                <p class="text-sm text-slate-300 leading-relaxed">Combat rapproché, nettoyage de zones et protection VIP.</p>
+                                <p class="text-sm text-slate-300 leading-relaxed"> • Unités de combat rapproché, protection VIP.</p>
+                                <p class="text-sm text-slate-300 leading-relaxed"> • Terrestres et pyrothecniques. Ils forment un mur défensif solide et offensif à la fois, habilité à la défense de VIP.</p>
                             </div>
                         </div>
                         <div class="bg-slate-900/40 p-4 rounded border border-slate-700/50 flex gap-4">
                              <div class="w-16 h-16 bg-black/50 rounded-full border border-slate-600 flex items-center justify-center flex-shrink-0 text-[8px] text-slate-500 italic">[Logo Dryax]</div>
                             <div>
                                 <h4 class="text-white font-bold tech-font text-lg">DRYAX</h4>
-                                <p class="text-sm text-slate-300 leading-relaxed">Médecins. Vital pour la survie du régiment sur le terrain.</p>
+                                <p class="text-sm text-slate-300 leading-relaxed"> • Unités de soutien, sauvetage.</p>
+                                <p class="text-sm text-slate-300 leading-relaxed"> • Terrestres, aériennes et médical. Ils constituent la ligne de soutien primordiale pour le maintien en vie de la meute.</p>
                             </div>
                         </div>
+                    </div>
+                    <div class="bg-slate-900/40 p-4 rounded border border-slate-700/50 flex gap-4">
+                             <div class="w-16 h-16 bg-black/50 rounded-full border border-slate-600 flex items-center justify-center flex-shrink-0 text-[8px] text-slate-500 italic">[Logo ARC/RC]</div>
+                            <div>
+                                <h4 class="text-white font-bold tech-font text-lg">ARC/RC</h4>
+                                <p class="text-sm text-slate-300 leading-relaxed"> • Unités d'élite d'Appui-feu et de Reconnaissance .</p>
+                                <p class="text-sm text-slate-300 leading-relaxed"> • Terrestres, aériennes (pour les ARC Troopers). Des unités de grande polyvalence, adaptées à toutes les missions.</p>
+                            </div>
                     </div>
                 </div>
 
                 <div>
-                    <h3 class="text-xl text-blue-400 tech-font border-b border-blue-900/30 pb-2 mb-6 flex items-center gap-2">
-                        <i data-lucide="crosshair" class="w-5 h-5"></i> II. FORMATIONS DE COMBAT
+                    <h3 class="text-xl text-blue-400 tech-font border-b border-blue-900/30 pb-2 mb-6 flex items-center gap-2 mt-5">
+                        <i data-lucide="crosshair" class="w-5 h-5"></i> III. FORMATIONS DE COMBAT
                     </h3>
                     
                     <div class="p-4 bg-red-900/10 border border-red-500/20 rounded mb-8 text-center">
@@ -2056,12 +2087,54 @@
                                 [Image Schéma Avancée Fortifiée]
                             </div>
                         </div>
+                        <div class="bg-slate-900/40 p-4 rounded border border-slate-700/50 flex gap-3">
+                            <div>
+                                <p class="text-sm text-slate-300 leading-relaxed">
+                                    La formation <strong class="text-blue-400">Protection Véhicule</strong> vise à positionner des unités sur les côtés du véhicule pour permettre une réparation rapide en cas de besoin, tout en progressant avec une bonne visibilité.<br><br>
+
+                                    <strong>• À l’avant et autour du véhicule :</strong> privilégiez <strong class="text-blue-400">la Blaze</strong>.<br>
+
+                                    <strong>• Derrière :</strong> les <strong class="text-blue-400">Black Wolves</strong>, pour renforcer la puissance de feu.<br>
+
+                                    <strong>• En hauteur ou hors des côtés (ex. toits) :</strong> uniquement la <strong class="text-blue-400">Wolfpack</strong> et les <strong class="text-blue-400">ARC/RC</strong>, grâce à leur mobilité et leur polyvalence.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="bg-slate-900/40 p-4 rounded border border-slate-700/50 flex gap-3">
+                            <div>
+                                <p class="text-sm text-slate-300 leading-relaxed">
+                                    <strong class="text-blue-400">L’Avancée Fortifiée</strong> vise à progresser avec une forte puissance de frappe, tout en maintenant une formation solide et organisée.<br><br>
+                                    
+                                    <strong>• Première ligne :</strong> les <strong class="text-blue-400">Blaze</strong>, pour encaisser et sécuriser le terrain.<br>
+
+                                    <strong>• Juste derrière :</strong> les <strong class="text-blue-400">Black Wolves</strong>, pour le soutien et la puissance de feu.<br>
+
+                                    <strong>• Dernière ligne :</strong> les <strong class="text-blue-400">CT, Dryax</strong>, protégés pour intervenir efficacement.<br><br>
+
+                                    La <strong class="text-blue-400">Wolfpack</strong> et les <strong class="text-blue-400">ARC/RC</strong> peuvent être déployées selon la situation, grâce à leur mobilité et leur polyvalence.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-slate-900/40 p-4 rounded border border-slate-700/50 flex gap-3 mt-6">
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            Vous pouvez aussi demander des véhicules pour appuyer vos missions :<br><br>
+
+                            <strong class="text-blue-400">AT-TE</strong> : le véhicule le plus utilisé, robuste et capable d’évoluer sur tout type de terrain.<br><br>
+
+                            <strong class="text-blue-400">AT-RT</strong> : apprécié pour sa rapidité et sa mobilité.<br><br>
+
+                            <strong class="text-blue-400">TX-225</strong> : utilisé principalement pour le transport de marchandises.<br><br>
+
+                            Vous devez assurer le lead de la 104th, mais sans stress. Tant que les placements sont faits correctement, il n’y a pas de pression pour la suite.<br>
+                            Cependant, en cas de difficulté lors d’un assaut de PDP, vous pouvez arrêter l’opération immédiatement (sauf pour les PDP importantes). Cela permet de mieux entendre et gérer les communications.
+                        </p>
                     </div>
                 </div>
 
                 <div>
-                    <h3 class="text-xl text-blue-400 tech-font border-b border-blue-900/30 pb-2 mb-6 flex items-center gap-2">
-                        <i data-lucide="activity" class="w-5 h-5"></i> III. EXERCICE PRATIQUE
+                    <h3 class="text-xl text-blue-400 tech-font border-b border-blue-900/30 pb-2 mb-6 flex items-center gap-2 mt-5">
+                        <i data-lucide="activity" class="w-5 h-5"></i> IV. EXERCICE PRATIQUE
                     </h3>
                     <div class="bg-slate-900/50 border border-slate-700 rounded overflow-hidden p-6">
                         <h5 class="text-red-400 font-bold tech-font text-sm mb-4">SIMULATION : PLANÈTE HOW</h5>
@@ -2074,6 +2147,16 @@
                                 <li class="flex gap-2">2. Désamorcer les bombes.</li>
                                 <li class="flex gap-2">3. Hacker les terminaux.</li>
                             </ul>
+                            <p class="text-sm text-slate-300 leading-relaxed">
+                                Vous êtes envoyés sur la planète <strong class="text-blue-400">How</strong>.<br><br>
+
+                                Votre objectif est de libérer les otages pris au piège : la <strong class="text-blue-400">CSI</strong> a piégé la ville avec trois bombes (<strong class="text-blue-400">Alpha</strong>, <strong class="text-blue-400">Charlie</strong> et <strong class="text-blue-400">Delta</strong>).<br><br>
+
+                                Vous devrez libérer les otages, désamorcer les bombes et hacker les terminaux situés sur <strong class="text-blue-400">Delta</strong>.
+                            </p>
+                            <div class="aspect-video bg-black/60 rounded border border-slate-800 flex items-center justify-center text-slate-600 italic text-xs">
+                                [Image Carte Simulation How]
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -2290,7 +2373,7 @@
                     <!-- Présentation -->
                     <div class="space-y-4">
                         <h4 class="text-white font-bold tech-font border-l-2 border-blue-500 pl-3">A. Présentation du TX-225</h4>
-                        <div class="bg-slate-900/50 p-6 rounded border border-slate-800 h-full">
+                        <div class="bg-slate-900/50 p-6 rounded border border-slate-800 h-full gap-5">
                             <p class="text-sm text-slate-300 leading-relaxed mb-4">
                                 <strong class="text-white">Rôle Principal :</strong> Véhicule de soutien pour missions humanitaires et logistiques.
                             </p>
@@ -2830,7 +2913,7 @@
                                     <strong class="text-blue-400 text-xs uppercase block mb-1">Procédure :</strong>
                                     <ol class="list-decimal pl-4 space-y-2 marker:text-blue-500 text-xs">
                                         <li>Repérer le <span class="text-green-400 font-bold">numéro vert entre crochets [0]</span>.</li>
-                                        <li>Cliquer dessus rapidement (env. 35 fois).</li>
+                                        <li>Tapez le numéro vert entre crochets (env. 35 fois).</li>
                                         <li>Le numéro alterne entre 0 et 1 : gardez le rythme.</li>
                                     </ol>
                                 </div>
