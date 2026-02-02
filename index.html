@@ -770,6 +770,30 @@
                     </div>
                 </div>
 
+                <div class="center mb-12 tech-font flex justify-center items-center gap-4">
+    
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+                        <span>Formation à partir de CT ASP</span>
+                    </div>
+
+                    <span class="text-slate-700">|</span>
+
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 bg-amber-500 rounded-full"></div>
+                        <span>Formation à partir de SGT</span>
+                    </div>
+
+                    <span class="text-slate-700">|</span>
+
+                    <div class="flex items-center gap-2">
+                        <div class="w-3 h-3 bg-green-500 rounded-full"></div>
+                        <span>Formation régimentaire</span>
+                    </div>
+
+                </div>
+                
+
                 <!-- CONTENEUR PRINCIPAL FORMATIONS -->
                 <div id="formations-module" class="w-full max-w-7xl mx-auto p-4">
                     
@@ -1989,17 +2013,11 @@
     (function() {
     /**
      * STRUCTURE DE DONNÉES DES FORMATIONS
-     A corriger formation :
-     CMD DE MISSION
-     TX225
-     TEMRINAL(corriger petit phrase lors du hack)
-     SDM ( Revoire les explications )
-     MANQUE DATA CENTER
-     Armurerie (Logo)
      */
     const formationsData = {
     "CMD de mission": {
         category: "COMMANDEMENT",
+        color: "bg-yellow-700/10 border-yellow-600/30 hover:bg-yellow-700/10",
         icon: "award",
         summary: "Gestion d'escouade et coordination stratégique de terrain.",
         content: `
@@ -2165,6 +2183,7 @@
     },
     "AT-TE": {
         category: "PILOTAGE",
+        color: "bg-blue-700/10 border-blue-600/30 hover:bg-blue-700/10",
         icon: "truck",
         summary: "Apprentissage du maniement et de l'armement de l'AT-TE.",
         content: `
@@ -2288,6 +2307,7 @@
     },
     "TX-225": {
         category: "PILOTAGE",
+        color: "bg-blue-700/10 border-blue-600/30 hover:bg-blue-700/10",
         icon: "truck",
         summary: "Apprentissage du maniement et de l'armement du TX-225.",
         content: `
@@ -2428,6 +2448,7 @@
     },
     "AV-7": {
         category: "PILOTAGE",
+        color: "bg-blue-700/10 border-blue-600/30 hover:bg-blue-700/10",
         icon: "truck",
         summary: "Apprentissage du maniement et de l'armement de l'AV-7.",
         content: `
@@ -2583,6 +2604,7 @@
     },
     "BOMBE": {
         category: "TECHNIQUE",
+        color: "bg-blue-700/10 border-blue-600/30 hover:bg-blue-700/10",
         icon: "alert-triangle",
         summary: "Apprentissage du désamorçage de bombe.",
         content: `
@@ -2774,6 +2796,7 @@
     },
     "TERMINAL": {
         category: "TECHNIQUE",
+        color: "bg-blue-700/10 border-blue-600/30 hover:bg-blue-700/10",
         icon: "terminal",
         summary: "Apprentissage du fonctionnement et hacking d'un terminal.",
         content: `
@@ -2932,6 +2955,7 @@
     },
     "SDM": {
         category: "TECHNIQUE",
+        color: "bg-blue-700/10 border-blue-600/30 hover:bg-blue-700/10",
         icon: "cpu",
         summary: "Apprentissage du fonctionnement des salles des machines.",
         content: `
@@ -3321,6 +3345,7 @@
     },
     "REPARATION": {
         category: "TECHNIQUE",
+        color: "bg-blue-700/10 border-blue-600/30 hover:bg-blue-700/10",
         icon: "truck",
         summary: "Apprentissage des procédure de réparation des véhicules.",
         content: `
@@ -3712,7 +3737,8 @@
     },
     "ARMURERIE": {
         category: "REGIMENTAIRE",
-        icon: "shield-lock",
+        color: "bg-green-700/10 border-green-600/30 hover:bg-green-700/10",
+        icon: "cpu",
         summary: "Apprentissage du fonctionnement de l'armurerie. (Formation régimentaire)",
         content: `
                 <div class="space-y-16">
@@ -3934,6 +3960,7 @@
     },
     "PILOTAGE AT-TE": {
         category: "REGIMENTAIRE",
+        color: "bg-green-700/10 border-green-600/30 hover:bg-green-700/10",
         icon: "truck",
         summary: "Apprentissage du pilotage de l'AT-TE (Formation régimentaire)",
         content: `
@@ -4139,6 +4166,7 @@
     },
     "REPARATiON 501st": {
         category: "REGIMENTAIRE",
+        color: "bg-green-700/10 border-green-600/30 hover:bg-green-700/10",
         icon: "truck",
         summary: "Apprentissage des réparations des véhicules 501st (Formation régimentaire)",
         content: `
@@ -4425,6 +4453,7 @@
     },
     "REPARATION 212th": {
         category: "REGIMENTAIRE",
+        color: "bg-green-700/10 border-green-600/30 hover:bg-green-700/10",
         icon: "truck",
         summary: "Apprentissage des réparations des véhicules 212th (Formation régimentaire)",
         content: `
@@ -4711,6 +4740,7 @@
     },
     "REPARATION 327th": {
         category: "REGIMENTAIRE",
+        color: "bg-green-700/10 border-green-600/30 hover:bg-green-700/10",
         icon: "truck",
         summary: "Apprentissage des réparations des véhicules 327th (Formation régimentaire)",
         content: `
@@ -4997,6 +5027,7 @@
     },
     "REPARATION 41st (INVALIDE)": {
         category: "REGIMENTAIRE",
+        color: "bg-green-700/10 border-green-600/30 hover:bg-green-700/10",
         icon: "truck",
         summary: "Apprentissage des réparations des véhicules 41st (Formation régimentaire)",
         content: `
@@ -5005,6 +5036,7 @@
     },
     "REPARATION SHOCK TROOPERS": {
         category: "REGIMENTAIRE",
+        color: "bg-green-700/10 border-green-600/30 hover:bg-green-700/10",
         icon: "truck",
         summary: "Apprentissage des réparations des véhicules SHOCK (Formation régimentaire)",
         content: `
@@ -5258,21 +5290,35 @@
                 
                 // Création de l'élément carte
                 const card = document.createElement('div');
-                card.className = "bg-slate-800/50 border border-slate-700 hover:border-blue-500/50 hover:bg-slate-800 transition-all duration-300 rounded-lg p-6 cursor-pointer group flex flex-col gap-4 relative overflow-hidden";
+
+                // Extraire couleur principale (ex: 'yellow-700')
+                const colorMatch = (data.color || '').match(/([a-z]+)-([0-9]{3})/);
+                const colorName = colorMatch ? colorMatch[1] : 'blue';
+
+                // Classes dynamiques basées sur `color`
+                const cardColorClasses = data.color || 'bg-slate-800/50 border border-slate-700 hover:border-blue-500/50 hover:bg-slate-800';
+                const textClass = `text-${colorName}-400`;
+                const textHoverClass = `group-hover:text-${colorName}-300`;
+                const categoryClass = `text-${colorName}-500`;
+                const bigIconClass = `text-${colorName}-500`;
+                const circleBorderClass = `border-${colorName}-500/30`;
+                const circleBorderHover = `group-hover:border-${colorName}-500/30`;
+
+                card.className = `${cardColorClasses} transition-all duration-300 rounded-lg p-6 cursor-pointer group flex flex-col gap-4 relative overflow-hidden`;
                 
-                // HTML de la carte
+                // HTML de la carte (avec classes dynamiques)
                 card.innerHTML = `
                     <div class="absolute top-0 right-0 p-3 opacity-10 group-hover:opacity-20 transition-opacity">
-                        <i data-lucide="${data.icon}" class="w-24 h-24 text-blue-500 transform rotate-12"></i>
+                        <i data-lucide="${data.icon}" class="w-24 h-24 ${bigIconClass} transform rotate-12"></i>
                     </div>
                     
                     <div class="flex items-center gap-3">
-                        <div class="p-3 bg-slate-900 rounded-lg border border-slate-700 text-blue-400 group-hover:text-blue-300 group-hover:border-blue-500/30 transition-colors shadow-lg">
+                        <div class="p-3 bg-slate-900 rounded-lg ${circleBorderClass} ${circleBorderHover} ${textClass} ${textHoverClass} transition-colors shadow-lg">
                             <i data-lucide="${data.icon}" class="w-6 h-6"></i>
                         </div>
                         <div>
-                            <span class="text-xs font-bold text-blue-500 tracking-wider uppercase">${data.category}</span>
-                            <h3 class="text-white font-bold text-lg leading-tight group-hover:text-blue-100">${key}</h3>
+                            <span class="text-xs font-bold ${categoryClass} tracking-wider uppercase">${data.category}</span>
+                            <h3 class="text-white font-bold text-lg leading-tight ${'group-hover:text-'+colorName+'-100'}">${key}</h3>
                         </div>
                     </div>
                     
@@ -5280,7 +5326,7 @@
                         <p class="text-slate-400 text-sm line-clamp-2">${data.summary}</p>
                     </div>
                     
-                    <div class="mt-auto pt-4 border-t border-slate-700/50 flex items-center justify-between text-xs text-slate-500 group-hover:text-blue-400 transition-colors">
+                    <div class="mt-auto pt-4 border-t border-slate-700/50 flex items-center justify-between text-xs text-slate-500 ${textHoverClass} transition-colors">
                         <span>Accéder au dossier</span>
                         <i data-lucide="arrow-right" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"></i>
                     </div>
