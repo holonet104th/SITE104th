@@ -231,7 +231,7 @@
 
         /* --- HOLOGRAM EFFECT (Home) - INVERTED BEAM & STRONGER EFFECT --- */
         /* Push the holo-stage as low as possible in the page area */
-        #home { display:flex; align-items:flex-end; justify-content:center; min-height: calc(100vh - 6rem); padding-bottom:3rem; position:relative; }
+        #home { display:flex; align-items:flex-end; justify-content:center; padding-bottom:3rem; position:relative; }
 
         .holo-stage {
             height: 60vh; min-height: 340px; display:flex; align-items:flex-end; justify-content:center;
@@ -309,12 +309,162 @@
             transition: transform 0.6s cubic-bezier(.2,.9,.2,1), opacity 0.45s ease, filter 0.6s ease;
             animation: holo-img-pulse 4.6s ease-in-out infinite;
             display: block;
-            /* masque abrupt : à 50% l'image devient invisible */
-            -webkit-mask-image: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 51%, rgba(0,0,0,0) 100%);
-            mask-image: linear-gradient(180deg, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 50%, rgba(0,0,0,0) 51%, rgba(0,0,0,0) 100%);
-            -webkit-mask-size: 100% 100%;
-            mask-size: 100% 100%;
+            /* masque supprimé pour afficher la vidéo complètement */
+            -webkit-mask-image: none !important;
+            mask-image: none !important;
+            -webkit-mask-size: auto;
+            mask-size: auto;
             mix-blend-mode: screen;
+        }
+
+        /* --- ADAPTATIONS POUR LA CASE CENTRALE DU QG --- */
+        /* Make home fill viewport so we can anchor holo beam/text to page bottom */
+        #home { min-height: calc(100vh - 4rem); display:flex; align-items:flex-end; justify-content:center; padding-bottom:3rem; position:relative; }
+        /* Ensure grid fills the home section */
+        #home > .grid { height: 100%; }
+
+        /* Central panel behavior */
+        #qg-holo { position: relative; display:flex; align-items:flex-end; justify-content:center; }
+
+        /* Video wrapper: positioned just above the holo text (fixed width across viewports) */
+        #qg-holo .holo-image-wrapper {
+            position: absolute;
+            left: 50%;
+            bottom: calc(2.6rem + 1rem); /* place slightly above holo text */
+            transform: translateX(-50%);
+            width: 720px; /* fixed width so it doesn't scale with viewport width */
+            aspect-ratio: 16 / 9; /* keep consistent aspect */
+            height: auto;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            z-index: 2;
+            pointer-events: none;
+            overflow: hidden;
+            border-radius: 6px; /* slight rounding for polish */
+            background: transparent;
+        }
+
+        /* Scanlines using ::before */
+        #qg-holo .holo-image-wrapper::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: repeating-linear-gradient(180deg, rgba(0,255,255,0.03) 0 1px, transparent 1px 3px);
+            opacity: 0.35;
+            mix-blend-mode: screen;
+            pointer-events: none;
+            z-index: 4;
+            animation: scan-move 6s linear infinite;
+        }
+
+        /* Gradient overlay at the bottom of the video (visible above the video) */
+        #qg-holo .holo-image-wrapper::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 40%;
+            background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.48) 100%);
+            pointer-events: none;
+            z-index: 5; /* above the video */
+            mix-blend-mode: multiply;
+        }
+
+        /* Grain overlay */
+        #qg-holo .holo-grain {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+            background-size: 3px 3px;
+            opacity: 0.06;
+            z-index: 6;
+            pointer-events: none;
+            animation: grain 0.8s steps(10) infinite;
+        }
+
+        /* Glitch overlay (subtle RGB split via movement + hue shifts) */
+        #qg-holo .holo-glitch {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 3;
+            mix-blend-mode: screen;
+            opacity: 0.7;
+            background: transparent;
+            will-change: transform;
+            animation: holo-glitch 6s infinite;
+        }
+
+        /* Video fixed size and centered in wrapper */
+        #qg-holo .holo-image {
+            position: relative;
+            z-index: 1; /* under overlays */
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* fill the frame, crops if needed */
+            -webkit-mask-image: none !important;
+            mask-image: none !important;
+            animation: holo-subtle 8s infinite linear;
+        }
+
+        /* Holo text anchored at bottom of the panel (near page bottom) */
+        #qg-holo .holo-text {
+            position: absolute;
+            bottom: 2.6rem;
+            left: 50%;
+            transform: translateX(-50%) translateZ(40px) rotateX(-18deg);
+            z-index: 7; /* above all overlays */
+            text-align: center;
+            pointer-events: none;
+        }
+
+        /* Ensure holo beam sits at the very bottom of the panel and does not overlap the text/video */
+        #qg-holo .holo-beam {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+            height: 96vh; /* keep large but clipped by container */
+            max-height: 110vh;
+            width: 60%;
+            max-width: 800px;
+        }
+
+        /* Animations */
+        @keyframes scan-move { from { background-position: 0 0; } to { background-position: 0 30px; } }
+        @keyframes grain { 0% { transform: translateY(0);} 100%{ transform: translateY(-2px);} }
+        @keyframes holo-glitch {
+          0% { transform: translateX(0) skewX(0); filter: none; }
+          2% { transform: translateX(-2px) skewX(-0.3deg); filter: hue-rotate(-10deg) saturate(1.1); }
+          3% { transform: translateX(0); filter: none; }
+          30% { transform: translateX(0); filter:none; }
+          32% { transform: translateX(2px) skewX(0.3deg); filter: hue-rotate(8deg) saturate(1.05); }
+          33% { transform: translateX(0); filter:none; }
+          100% { transform: translateX(0); filter:none; }
+        }
+        @keyframes holo-subtle { 0% { transform: translateY(0); } 50% { transform: translateY(-1.2px); } 100% { transform: translateY(0); } }
+
+        /* Mobile tweaks: keep video fixed but smaller on narrow screens */
+        @media (max-width: 640px) {
+            #qg-holo .holo-image-wrapper { width: 420px; }
+            #qg-holo .holo-text { bottom: 1.6rem; }
+            #qg-holo .holo-grain { opacity: 0.04; }
+        }
+
+        /* Rendre les bordures du div 3 transparentes */
+        #qg-holo.holo-panel {
+            border-color: transparent !important;
+            box-shadow: none !important;
+            background: transparent !important; /* fond complètement transparent */
+            background-color: transparent !important;
+        }
+        /* Masquer la bande d'accent sur la gauche pour ce panneau */
+        #qg-holo.holo-panel::before {
+            background: transparent !important;
+            width: 0 !important;
         }
         @keyframes holo-img-pulse {
             0% { transform: translateY(0) scale(1); filter: grayscale(1) contrast(1.05) brightness(1.02) sepia(1) hue-rotate(170deg) saturate(240%); }
@@ -446,29 +596,41 @@
 
             <!-- 1. QG: DASHBOARD -->
             <section id="home" class="page-section">
-                <div class="holo-stage">
-                    <div class="holo-projector">
-                        <!-- Beam projecteur -->
-                        <div class="holo-beam" aria-hidden="true"></div>
+                <!-- Grid QG: -->
 
-                        <!-- Image holographique (spectre bleu) - au dessus du texte -->
-                        <div class="holo-image-wrapper" aria-hidden="true">
-                            <video class="holo-image holo-image-tinted" autoplay muted loop playsinline preload="auto">
-                                <source src="./img/QG/wolffe.mp4" type="video/mp4">
-                                <!-- Fallback image si la vidéo n'est pas supportée -->
-                                <img src="./img/QG/3636wolffe.png" alt="Emblème 104th">
-                            </video>
-                        </div>
+                        <!-- Holo-stage placé dans la case centrale -->
+                        <div class="holo-stage w-full">
+                            <div class="holo-projector mx-auto">
+                                <!-- Beam projecteur (cone bleu hologram) -->
+                                <div class="holo-beam" aria-hidden="true"></div>
 
-                        <!-- Texte holographique projected -->
-                        <div class="holo-text holo-flicker" data-text="HOLO-COMMAND 104TH">HOLO-COMMAND 104TH
-                            <span class="chroma-darker" aria-hidden="true">HOLO-COMMAND 104TH</span>
-                            <span class="scan-overlay" aria-hidden="true"></span>
+                                <!-- Image holographique (spectre bleu) - vidéo -->
+                                <div class="holo-image-wrapper" aria-hidden="true">
+                                    <video id="qg-holo-video" class="holo-image holo-image-tinted" autoplay muted loop playsinline preload="auto">
+                                        <source src="./img/QG/wolffe.mp4" type="video/mp4">
+                                        <!-- Fallback image si la vidéo n'est pas supportée -->
+                                        <img src="./img/QG/3636wolffe.png" alt="Emblème 104th">
+                                    </video>
+
+                                    <!-- Grain & glitch overlays (visuels non-invasifs) -->
+                                    <div class="holo-grain" aria-hidden="true"></div>
+                                    <div class="holo-glitch" aria-hidden="true"></div>
+                                </div>
+
+                                <!-- Texte holographique projected -->
+                                <div class="holo-text holo-flicker" data-text="HOLO-COMMAND 104TH">HOLO-COMMAND 104TH
+                                    <span class="chroma-darker" aria-hidden="true">HOLO-COMMAND 104TH</span>
+                                    <span class="scan-overlay" aria-hidden="true"></span>
+                                </div>
+                                <div class="holo-caption text-slate-300 text-sm mt-4 text-center">Base de commandement — Visualisation tactique</div>
+
+                                <!-- Filtre / overlay (optionnel) -->
+                                <div class="absolute inset-0 pointer-events-none mix-blend-screen opacity-30" aria-hidden="true"></div>
+                            </div>
                         </div>
-                        <div class="holo-caption text-slate-300 text-sm mt-4 text-center">Base de commandement — Visualisation tactique</div> 
-                    </div>
-                </div>
-            </section> 
+                    
+
+            </section>
 
 
 
@@ -5443,12 +5605,18 @@
 
         function showNewPage(pageId) {
             const target = document.getElementById(pageId);
+            const holoVideo = document.querySelector('#qg-holo video');
             if(target) {
                 target.classList.add('active-block');
                 window.scrollTo(0,0);
                 requestAnimationFrame(() => {
                     target.classList.add('visible');
-                    if(pageId === 'home') animateJarvis('home');
+                    if(pageId === 'home') {
+                        animateJarvis('home');
+                        if(holoVideo) { holoVideo.currentTime = 0; holoVideo.play().catch(()=>{}); }
+                    } else {
+                        if(holoVideo) { try { holoVideo.pause(); holoVideo.currentTime = 0; } catch(e){} }
+                    }
                 });
             }
         }
