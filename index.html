@@ -45,6 +45,24 @@
         }
         .mono-font { font-family: 'Share Tech Mono', monospace; }
 
+        /* UI PANELS (Style Verre/Holo) */
+        .holo-panel {
+            background: rgba(26, 32, 44, 0.7);
+            border: 1px solid rgba(124, 144, 177, 0.3);
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(8px);
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .holo-panel:hover {
+            border-color: var(--wolf-blue);
+            box-shadow: 0 0 25px rgba(124, 144, 177, 0.4);
+        }
+        .holo-panel::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+            background: var(--wolf-blue);
+        }
+
         /* --- CINEMA BOOT SCREEN --- */
         #boot-screen {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
@@ -211,9 +229,7 @@
             background-color: #475569; /* slate-600 */
         }
 
-        /* --- HOLOGRAM EFFECT (Home) - INVERTED BEAM & STRONGER EFFECT --- */
-        /* Push the holo-stage as low as possible in the page area */
-        #home { display:flex; align-items:flex-end; justify-content:center; padding-bottom:3rem; position:relative; }
+        
 
     </style>
 </head>
@@ -332,7 +348,6 @@
 
             <!-- 1. QG: DASHBOARD -->
             <section id="home" class="page-section">
-            
             </section>
 
 
